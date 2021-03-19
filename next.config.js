@@ -1,5 +1,11 @@
+const withCSS = require('@zeit/next-css');
 const withImages = require('next-images');
 
-module.exports = withImages({
-  esModule: true,
-});
+module.exports = withCSS(
+  withImages({
+    esModule: true,
+  })
+);
+
+
+

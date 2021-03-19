@@ -9,6 +9,8 @@ export default createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
     font-size: 62.5%;
+    text-decoration: none;
+    border: none;
 
     @media (orientation: portrait) {
       @media (min-width: 280px) {
