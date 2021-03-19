@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Head from 'next/head';
-import { Add } from '@material-ui/icons';
-import { Header } from '../styles/home';
+import { AccountCircle } from '@material-ui/icons';
+import { Header, Body, Searchbar } from '../styles/home';
 
 const Home: React.FC = () => (
   <div>
@@ -10,8 +10,14 @@ const Home: React.FC = () => (
       <title>Home</title>
     </Head>
     <Header>
-      <Add />
+      <div id="logo" />
+      <button type="submit">
+        <AccountCircle color="action" />
+      </button>
     </Header>
+    <Body>
+      <Searchbar />
+    </Body>
   </div>
 );
 

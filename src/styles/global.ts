@@ -12,7 +12,7 @@ export default createGlobalStyle`
     text-decoration: none;
     border: none;
 
-    @media (orientation: portrait) {
+    /* @media (orientation: portrait) {
       @media (min-width: 280px) {
           font-size: 27%;
       }
@@ -73,10 +73,8 @@ export default createGlobalStyle`
 
       @media (min-width: 1366px) {
           font-size: 90%;
-      }
-
-
-    }
+      } */
+    /* } */
   }
 
   #__next {}

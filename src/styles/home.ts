@@ -9,9 +9,16 @@ export const Header = styled.div`
   align-items: center;
   padding: 0 2rem;
 
-  img {
-    width: 0;
-    height: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  #logo {
+    width: 12.5rem;
+    height: 6.3rem;
+    left: 2.1rem;
+    top: 3rem;
+    border-radius: 50%;
+
+    background: #4db6ac;
   }
 
   button {
@@ -19,19 +26,22 @@ export const Header = styled.div`
     height: 6rem;
     display: flex;
 
-    img {
+    img,
+    svg {
       width: 100%;
       height: 100%;
+      color: #4db6ac;
     }
   }
 `;
-export const Body = styled.body`
+export const Body = styled.div`
   flex: 1;
   display: flex;
-  padding: 3.5rem 2rem 2rem 0;
+  padding: 3.5rem 2rem;
+  justify-content: center;
 `;
 
-export const Searchbar = styled.input.attrs({ type: 'submit' })`
+export const Searchbar = styled.input.attrs({ type: 'text' })`
   border-radius: 2.5rem;
   width: 34.5rem;
   height: 3.3rem;
