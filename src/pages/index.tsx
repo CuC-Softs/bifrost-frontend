@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Head from 'next/head';
-import { AccountCircle } from '@material-ui/icons';
-import { Header, Body, Searchbar } from '../styles/home';
+import { AccountCircle, Search } from '@material-ui/icons';
+import { Header, Body, SearchBarDiv, SearchBarInput } from '../styles/home';
 
 const Home: React.FC = () => (
   <div>
@@ -16,7 +16,11 @@ const Home: React.FC = () => (
       </button>
     </Header>
     <Body>
-      <Searchbar />
+      <SearchBarDiv>
+        <Search />
+        <SearchBarInput />
+      </SearchBarDiv>
+      <div id="slogan">FAÇA A VIAGEM DO SEUS SONHOS!</div>
     </Body>
   </div>
 );
