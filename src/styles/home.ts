@@ -14,10 +14,8 @@ export const Header = styled.div`
   #logo {
     width: 18.6rem;
     height: 9rem;
-    background: #4db6ac;
     border: none;
     /* Me explica dps como usa imagens nesse framework, que n lembro */
-    background-image: url('../public/images/profile.svg');
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
@@ -37,6 +35,7 @@ export const Header = styled.div`
     }
   }
 `;
+
 export const Body = styled.div`
   flex: 1;
   display: flex;
@@ -93,34 +92,47 @@ export const SearchBarInput = styled.input.attrs({ type: 'text' })`
 `;
 
 export const Hot = styled.ul`
+  margin-top: 6rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   li {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 
-    div {
+    & + li {
+      margin-top: 5rem;
+    }
+
+    #image {
       display: flex;
       height: 20rem;
       width: 17rem;
       border-radius: 2.5rem;
-      background: url() no-repeat;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      background: url('/images/paisagem.png') no-repeat;
+      box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 
       div {
-        background: linear-gradient(rgba(0, 66, 61, 1), rgba(255, 255, 255, 0));
+        background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 66, 61, 1));
         width: 100%;
         height: 100%;
         display: flex;
         border-radius: 2.5rem;
         justify-content: center;
         align-items: flex-end;
+        position: relative;
 
         label {
           font-family: Roboto, sans-serif;
           font-size: 2.3rem;
           color: #fff;
           width: 17rem;
-          height: 3rem;
+          margin-bottom: 0.2rem;
           text-align: center;
-          text-justify: center;
         }
       }
     }
@@ -129,12 +141,22 @@ export const Hot = styled.ul`
       background: rgba(235, 235, 235, 0.5);
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       flex-direction: column;
+      border-radius: 2.5rem;
+      width: 16.5rem;
+      height: 18rem;
+      padding: 0.2rem 0 1rem 0;
+
+      //stars
+      div {
+        display: flex;
+        margin-bottom: 1.1rem;
+      }
 
       img,
       svg {
-        width: 12.5rem;
+        width: 2.5rem;
         height: 2.9rem;
         justify-self: flex-start;
         align-self: center;
@@ -147,7 +169,6 @@ export const Hot = styled.ul`
         max-width: 11.8rem;
         max-height: 15.2rem;
         text-align: center;
-        text-justify: center;
       }
     }
   }
