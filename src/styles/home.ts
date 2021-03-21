@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Header = styled.div`
+export const Header = styled.header`
   display: flex;
   width: 100%;
   height: 12rem;
@@ -9,17 +9,7 @@ export const Header = styled.div`
   align-items: center;
   padding: 1.5rem;
 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  #logo {
-    width: 18.6rem;
-    height: 9rem;
-    border: none;
-    /* Me explica dps como usa imagens nesse framework, que n lembro */
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-  }
+  box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 
   button {
     width: 6rem;

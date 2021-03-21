@@ -1,9 +1,5 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
-
 import Head from 'next/head';
 import { AccountCircle, Search } from '@material-ui/icons';
-import Logo from '../../public/images/logo.svg';
 import NotFilledStar from '../../public/images/not_filled_star.svg';
 import FilledStar from '../../public/images/filled_star.svg';
 import {
@@ -15,16 +11,15 @@ import {
   ButtonsList,
   Hot2,
 } from '../styles/home';
+import Logo from '../components/Logo';
 
 const Home: React.FC = () => (
-  <div>
+  <>
     <Head>
       <title>Home</title>
     </Head>
     <Header>
-      <div id="logo">
-        <Logo />
-      </div>
+      <Logo />
       <button type="submit">
         <AccountCircle color="action" />
       </button>
@@ -124,7 +119,7 @@ const Home: React.FC = () => (
         </div>
       </li>
     </Hot2>
-  </div>
+  </>
 );
 
 export default Home;
