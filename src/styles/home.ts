@@ -173,3 +173,26 @@ export const Hot = styled.ul`
     }
   }
 `;
+
+export const ButtonsList = styled.div`
+  display: flex;
+  margin-top: 4rem;
+
+  button {
+    width: 23.2rem;
+    height: 4.3rem;
+
+    background: url('/images/button_background.png'), #8edad3;
+    border-radius: 35rem;
+
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+
+    color: #ffffff;
+
+    text-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+  }
+`;

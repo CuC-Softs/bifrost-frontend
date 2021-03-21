@@ -6,13 +6,13 @@ import { AccountCircle, Search } from '@material-ui/icons';
 import Logo from '../../public/images/logo.svg';
 import NotFilledStar from '../../public/images/not_filled_star.svg';
 import FilledStar from '../../public/images/filled_star.svg';
-// import Paisagem from '../../public/images/paisagem.png';
 import {
   Header,
   Body,
   SearchBarDiv,
   SearchBarInput,
   Hot,
+  ButtonsList,
 } from '../styles/home';
 
 const Home: React.FC = () => (
@@ -87,6 +87,10 @@ const Home: React.FC = () => (
           </div>
         </li>
       </Hot>
+      <ButtonsList>
+        <button type="submit">Filtrar Opções</button>
+        <button type="submit">Seus Logbooks</button>
+      </ButtonsList>
     </Body>
   </div>
 );
