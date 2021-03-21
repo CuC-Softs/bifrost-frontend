@@ -40,7 +40,7 @@ export const Body = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 3.5rem 2rem;
+  padding: 3.5rem 2rem 0 2rem;
   align-items: center;
 
   #slogan {
@@ -103,12 +103,13 @@ export const Hot = styled.ul`
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    list-style: none;
 
     & + li {
       margin-top: 5rem;
     }
 
-    #image {
+    .hotImage {
       display: flex;
       height: 20rem;
       width: 17rem;
@@ -130,14 +131,14 @@ export const Hot = styled.ul`
           font-family: Roboto, sans-serif;
           font-size: 2.3rem;
           color: #fff;
-          width: 17rem;
+          width: 95%;
           margin-bottom: 0.2rem;
           text-align: center;
         }
       }
     }
     /* Isso é uma div */
-    #description {
+    .hotImageDescription {
       background: rgba(235, 235, 235, 0.5);
       display: flex;
       align-items: center;
@@ -177,13 +178,25 @@ export const Hot = styled.ul`
 export const ButtonsList = styled.div`
   display: flex;
   margin-top: 4rem;
+  overflow-x: scroll;
+  max-width: 100%;
+  padding: 0 8.6rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   button {
+    flex-shrink: 0;
     width: 23.2rem;
     height: 4.3rem;
 
     background: url('/images/button_background.png'), #8edad3;
     border-radius: 35rem;
+
+    & + button {
+      margin-left: 2.8rem;
+    }
 
     font-family: 'Roboto Condensed';
     font-style: normal;
@@ -194,5 +207,49 @@ export const ButtonsList = styled.div`
     color: #ffffff;
 
     text-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+  }
+`;
+
+export const Hot2 = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 4rem;
+  margin-top: 2rem;
+  padding: 3rem 0 4rem 0;
+  justify-items: center;
+  background: #d1dfde;
+
+  li {
+    list-style: none;
+  }
+
+  .hot2Image {
+    display: flex;
+    height: 17rem;
+    width: 15rem;
+    border-radius: 2.5rem;
+    background: url('/images/paisagem.png') no-repeat;
+    box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+
+    div {
+      background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 66, 61, 1));
+      width: 100%;
+      height: 100%;
+      display: flex;
+      border-radius: 2.5rem;
+      justify-content: center;
+      align-items: flex-end;
+      position: relative;
+
+      label {
+        font-family: Roboto, sans-serif;
+        font-size: 2.3rem;
+        color: #fff;
+        width: 95%;
+        margin-bottom: 0.2rem;
+        text-align: center;
+      }
+    }
   }
 `;
