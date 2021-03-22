@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { AccountCircle, Search } from '@material-ui/icons';
+import Link from 'next/link';
 import NotFilledStar from '../../public/images/not_filled_star.svg';
 import FilledStar from '../../public/images/filled_star.svg';
 import {
@@ -20,9 +21,11 @@ const Home: React.FC = () => (
     </Head>
     <Header>
       <Logo />
-      <button type="submit">
-        <AccountCircle color="action" />
-      </button>
+      <Link href="/login">
+        <button type="submit">
+          <AccountCircle color="action" />
+        </button>
+      </Link>
     </Header>
     <Body>
       <SearchBarDiv>

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { ArrowBack } from '@material-ui/icons';
 import { Header, Main } from '../styles/login';
 
@@ -11,7 +12,9 @@ const pages: React.FC = () => (
       <title>Login</title>
     </Head>
     <Header>
-      <ArrowBack />
+      <Link href="/">
+        <ArrowBack />
+      </Link>
       <Logo />
     </Header>
     <Main>
