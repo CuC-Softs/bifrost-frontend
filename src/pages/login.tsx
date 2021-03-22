@@ -3,6 +3,7 @@ import { ArrowBack } from '@material-ui/icons';
 import { Header, Main } from '../styles/login';
 
 import Logo from '../components/Logo';
+import GoogleIcon from '../../public/images/google-icon.svg';
 
 const pages: React.FC = () => (
   <>
@@ -43,9 +44,10 @@ const pages: React.FC = () => (
           viagens.
         </span>
         <button type="submit">
-          <span>Sincronize com o Google</span>{' '}
+          <GoogleIcon />
+          <span>Sincronize com o Google</span>
         </button>
-        <div style={{ minWidth: '36.2rem' }} />
+        <div style={{ display: 'flex', minWidth: '4.6rem', height: '1px' }} />
       </div>
     </Main>
   </>

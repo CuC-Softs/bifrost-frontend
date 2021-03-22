@@ -81,10 +81,17 @@ export const Main = styled.main`
       flex-direction: column;
       min-width: 31.6rem;
       margin-left: 4.6rem;
+      align-items: center;
+
+      svg {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
 
       span {
         min-width: 25.6rem;
         min-height: 2rem;
+        margin-top: 2rem;
 
         background: #00625b;
         border-radius: 3.5rem;
