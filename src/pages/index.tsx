@@ -13,6 +13,7 @@ import {
   Hot2,
 } from '../styles/home';
 import Logo from '../components/Logo';
+import Stars from '../components/Stars';
 
 const Home: React.FC = () => (
   <>
@@ -41,6 +42,7 @@ const Home: React.FC = () => (
             </div>
           </div>
           <div className="hotImageDescription">
+            <Stars rate={3} />
             <div>
               <NotFilledStar />
               <NotFilledStar />
