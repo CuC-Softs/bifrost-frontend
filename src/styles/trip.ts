@@ -94,5 +94,122 @@ export const LocationDescription = styled.div`
 
   #rating {
     display: flex;
+    width: 100%;
+    margin-top: 5.5rem;
+    padding-left: 2.6rem;
+
+    > span {
+      margin-left: 1.3rem;
+
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+      display: flex;
+      align-items: center;
+
+      color: #00867d;
+    }
+  }
+
+  #offer {
+    margin-top: 1.6rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+    display: flex;
+    width: 100%;
+    padding-left: 2.6rem;
+    align-items: center;
+
+    color: #00867d;
+  }
+`;
+
+export const MakeTripButton = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: 1.6rem;
+  justify-content: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36.7rem;
+    height: 14.2rem;
+
+    background: #c7f3ef;
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    border-radius: 3.5rem;
+
+    span {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+
+      color: #00867d;
+    }
+  }
+`;
+
+export const Reviews = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+  width: 100%;
+
+  #makeReview {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    color: #00867d;
+  }
+
+  #reviews {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    padding: 1.2rem 1.2rem 0 1.2rem;
+    width: 100%;
+
+    background: #f9f9f9;
+
+    div {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      color: #00867d;
+
+      svg {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
   }
 `;

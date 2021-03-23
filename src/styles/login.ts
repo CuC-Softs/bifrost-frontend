@@ -79,19 +79,22 @@ export const Main = styled.main`
     button {
       display: flex;
       flex-direction: column;
-      min-width: 31.6rem;
+      /* min-width: 31.6rem; */
       margin-left: 4.6rem;
       align-items: center;
 
       svg {
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 3rem;
+        height: 3rem;
+
+        margin-right: 1rem;
       }
 
       span {
-        min-width: 25.6rem;
+        padding: 0.8rem;
+        min-width: 31.6rem;
         min-height: 2rem;
-        margin-top: 2rem;
+        /* margin-top: 2rem; */
 
         background: #00625b;
         border-radius: 3.5rem;
@@ -99,10 +102,18 @@ export const Main = styled.main`
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 1.3rem;
         line-height: 1.5rem;
 
         color: #a2e0da;
+
+        div {
+          display: flex;
+
+          align-items: center;
+          justify-content: center;
+
+          font-size: 1.6rem;
+        }
       }
     }
   }

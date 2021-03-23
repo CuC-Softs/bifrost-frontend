@@ -140,20 +140,21 @@ export const Hot = styled.ul`
       padding: 0.2rem 0 1rem 0;
 
       //stars
-      div {
+      /* div {
         display: flex;
         margin-bottom: 1.1rem;
-      }
+      } */
 
-      img,
+      /* img,
       svg {
         width: 2.5rem;
         height: 2.9rem;
         justify-self: flex-start;
         align-self: center;
-      }
+      } */
 
       label {
+        margin-top: 1.1rem;
         color: #00867d;
         font-family: Roboto, sans-serif;
         font-size: 2.3rem;
@@ -181,6 +182,8 @@ export const ButtonsList = styled.div`
     width: 23.2rem;
     height: 4.3rem;
 
+    margin-bottom: 0.6rem;
+
     background: url('/images/button_background.png'), #8edad3;
     border-radius: 35rem;
 
@@ -193,6 +196,8 @@ export const ButtonsList = styled.div`
     font-weight: normal;
     font-size: 2.5rem;
     line-height: 2.9rem;
+
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 
     color: #ffffff;
 

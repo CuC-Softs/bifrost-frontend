@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import { AccountCircle, Search } from '@material-ui/icons';
 import Link from 'next/link';
-import NotFilledStar from '../../public/images/not_filled_star.svg';
-import FilledStar from '../../public/images/filled_star.svg';
 import {
   Header,
   Body,
@@ -42,26 +40,13 @@ const Home: React.FC = () => (
             </div>
           </div>
           <div className="hotImageDescription">
-            <Stars rate={3} />
-            <div>
-              <NotFilledStar />
-              <NotFilledStar />
-              <NotFilledStar />
-              <NotFilledStar />
-              <NotFilledStar />
-            </div>
+            <Stars rate={0} />
             <label>Praia de Malibu, Turismo Exótico</label>
           </div>
         </li>
         <li>
           <div className="hotImageDescription">
-            <div>
-              <FilledStar />
-              <FilledStar />
-              <FilledStar />
-              <FilledStar />
-              <NotFilledStar />
-            </div>
+            <Stars rate={4} />
             <label>Ponto Turístico Principal de Maceió</label>
           </div>
           <div className="hotImage">
@@ -77,13 +62,7 @@ const Home: React.FC = () => (
             </div>
           </div>
           <div className="hotImageDescription">
-            <div>
-              <FilledStar />
-              <FilledStar />
-              <FilledStar />
-              <NotFilledStar />
-              <NotFilledStar />
-            </div>
+            <Stars rate={3} />
             <label>Diversificado para diversão familiar</label>
           </div>
         </li>
@@ -91,7 +70,7 @@ const Home: React.FC = () => (
     </Body>
     <ButtonsList>
       <button type="submit">Filtrar Opções</button>
-      <button type="submit">Seus Logbooks</button>
+      <button type="submit">Seus Diários de Bordo</button>
       <div style={{ minWidth: '8.6rem' }} />
     </ButtonsList>
     <Hot2>
