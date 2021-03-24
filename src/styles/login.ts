@@ -46,7 +46,7 @@ export const Main = styled.main`
   #carousel {
     display: flex;
     max-width: 100%;
-    height: 24.2rem;
+    height: 21rem;
     align-items: center;
     margin-top: 4.4rem;
     overflow-x: hidden;
@@ -60,7 +60,7 @@ export const Main = styled.main`
 
     span {
       min-width: 31.6rem;
-      margin: 0 4.6rem;
+      margin: 0 4.8rem;
 
       font-family: Roboto;
       font-style: normal;
@@ -76,14 +76,15 @@ export const Main = styled.main`
       display: flex;
       flex-direction: column;
       /* min-width: 31.6rem; */
-      margin-left: 2.3rem;
+      margin-left: 4.8rem;
+      margin-right: 4.8rem;
       align-items: center;
 
       span {
         padding: 0.8rem;
         min-width: 31.6rem;
         min-height: 2rem;
-        /* margin-top: 2rem; */
+        margin: 0;
 
         background: #00625b;
         border-radius: 3.5rem;
@@ -111,6 +112,47 @@ export const Main = styled.main`
 
           font-size: 1.6rem;
         }
+      }
+    }
+
+    #carousel:last-child {
+      margin: 0;
+    }
+  }
+
+  #carousel-controller {
+    display: flex;
+    width: 34.5rem;
+    height: 3.3rem;
+
+    margin-top: 3.6rem;
+
+    justify-content: center;
+
+    button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 0.8rem;
+      min-width: 14rem;
+      min-height: 2rem;
+
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+
+      background: #00625b;
+      border-radius: 0.6rem;
+
+      color: #a2e0da;
+
+      box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+
+      & + button {
+        margin-left: 0.8rem;
       }
     }
   }

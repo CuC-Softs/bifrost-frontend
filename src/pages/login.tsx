@@ -2,30 +2,50 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { ArrowBack } from '@material-ui/icons';
+import { useEffect, useState } from 'react';
 import { Header, Main } from '../styles/login';
 
 import Logo from '../components/Logo';
 import GoogleIcon from '../../public/images/google-icon.svg';
 
 const pages: React.FC = () => {
-  function remToPx(rem) {
+  const [currentCard, setCurrentCard] = useState(0);
+
+  useEffect(() => {
+    if (currentCard === 0) {
+      document.getElementById('previous').style.display = 'none';
+    }
+    if (currentCard === 4) {
+      document.getElementById('next').style.display = 'none';
+    }
+    if (currentCard !== 0) {
+      document.getElementById('previous').style.display = 'block';
+    }
+    if (currentCard !== 4) {
+      document.getElementById('next').style.display = 'block';
+    }
+  }, [currentCard]);
+
+  function remToPx(rem: number) {
     return (
       rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
     );
   }
 
   function sideScroll(element, direction, speed, distance, step) {
+    const cStep = remToPx(step);
+    const cDist = remToPx(distance);
     let scrollAmount = 0;
     const slideTimer = setInterval(() => {
       if (direction === 'left') {
         // eslint-disable-next-line no-param-reassign
-        element.scrollLeft -= step;
+        element.scrollLeft -= cStep;
       } else {
         // eslint-disable-next-line no-param-reassign
-        element.scrollLeft += step;
+        element.scrollLeft += cStep;
       }
-      scrollAmount += step;
-      if (scrollAmount >= distance) {
+      scrollAmount += cStep;
+      if (scrollAmount >= cDist) {
         window.clearInterval(slideTimer);
       }
     }, speed);
@@ -73,7 +93,32 @@ const pages: React.FC = () => {
               </div>
             </span>
           </button>
+          <span>filler</span>
           {/* <div style={{ display: 'flex', minWidth: '4.6rem', height: '1px' }} /> */}
+        </div>
+        <div id="carousel-controller">
+          <button
+            id="previous"
+            type="button"
+            onClick={e => {
+              const container = document.getElementById('carousel');
+              sideScroll(container, 'left', 10, 40.8, 1);
+              setCurrentCard(currentCard - 1);
+            }}
+          >
+            Anterior
+          </button>
+          <button
+            id="next"
+            type="button"
+            onClick={e => {
+              const container = document.getElementById('carousel');
+              sideScroll(container, 'right', 10, 40.8, 1);
+              setCurrentCard(currentCard + 1);
+            }}
+          >
+            Próximo
+          </button>
         </div>
       </Main>
     </>

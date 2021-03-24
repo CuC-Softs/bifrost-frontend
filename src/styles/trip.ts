@@ -210,6 +210,35 @@ export const Reviews = styled.div`
       display: flex;
       flex-direction: column;
       width: 100%;
+
+      li {
+        list-style: none;
+      }
     }
+  }
+`;
+
+export const SendMessage = styled.div`
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 2.5rem;
+
+  #messageInput {
+    width: 29.2rem;
+    height: 5.1rem;
+    padding: 0 2.5rem;
+
+    background: #c7f3ef;
+    border-radius: 3.5rem;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.9rem;
+    line-height: 2.2rem;
+
+    color: #00867d;
   }
 `;
