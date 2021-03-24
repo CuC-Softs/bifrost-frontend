@@ -106,6 +106,7 @@ export const Main = styled.main`
 
         color: #a2e0da;
 
+        box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
         div {
           display: flex;
 
