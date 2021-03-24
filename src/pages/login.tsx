@@ -1,25 +1,45 @@
 import Head from 'next/head';
 import Link from 'next/link';
+
 import { ArrowBack } from '@material-ui/icons';
-import { useEffect } from 'react';
 import { Header, Main } from '../styles/login';
 
 import Logo from '../components/Logo';
 import GoogleIcon from '../../public/images/google-icon.svg';
 
 const pages: React.FC = () => {
-  const a = 'a';
+  function remToPx(rem) {
+    return (
+      rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+    );
+  }
+
+  function sideScroll(element, direction, speed, distance, step) {
+    let scrollAmount = 0;
+    const slideTimer = setInterval(() => {
+      if (direction === 'left') {
+        // eslint-disable-next-line no-param-reassign
+        element.scrollLeft -= step;
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        element.scrollLeft += step;
+      }
+      scrollAmount += step;
+      if (scrollAmount >= distance) {
+        window.clearInterval(slideTimer);
+      }
+    }, speed);
+  }
 
   return (
     <>
       <Head>
         <title>Login</title>
-        <script src="https://code.jquery.com/jquery-3.6.0.js" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" />
         <link
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css"
         />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js" />
       </Head>
       <Header>
         <Link href="/">
@@ -29,7 +49,7 @@ const pages: React.FC = () => {
       </Header>
       <Main>
         <span id="connect">Sincronize-se com uma rede social</span>
-        <div className="slider owl-carousel" id="carousel">
+        <div id="carousel">
           <span>
             Ao sincronizar com uma rede social, você terá acesso a:
             <br />
@@ -53,7 +73,7 @@ const pages: React.FC = () => {
               </div>
             </span>
           </button>
-          <div style={{ display: 'flex', minWidth: '4.6rem', height: '1px' }} />
+          {/* <div style={{ display: 'flex', minWidth: '4.6rem', height: '1px' }} /> */}
         </div>
       </Main>
     </>

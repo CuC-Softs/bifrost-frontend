@@ -49,8 +49,7 @@ export const Main = styled.main`
     height: 24.2rem;
     align-items: center;
     margin-top: 4.4rem;
-    padding-left: 5.3rem;
-    overflow-x: scroll;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar {
       display: none;
@@ -61,10 +60,7 @@ export const Main = styled.main`
 
     span {
       min-width: 31.6rem;
-
-      & + span {
-        margin-left: 4.6rem;
-      }
+      margin: 0 4.6rem;
 
       font-family: Roboto;
       font-style: normal;
@@ -80,15 +76,8 @@ export const Main = styled.main`
       display: flex;
       flex-direction: column;
       /* min-width: 31.6rem; */
-      margin-left: 4.6rem;
+      margin-left: 2.3rem;
       align-items: center;
-
-      svg {
-        width: 3rem;
-        height: 3rem;
-
-        margin-right: 1rem;
-      }
 
       span {
         padding: 0.8rem;
@@ -108,6 +97,13 @@ export const Main = styled.main`
 
         box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
         div {
+          svg {
+            width: 3rem;
+            height: 3rem;
+
+            margin-right: 1rem;
+          }
+
           display: flex;
 
           align-items: center;
