@@ -40,13 +40,13 @@ const Home: React.FC = () => (
             </div>
           </div>
           <div className="hotImageDescription">
-            <Stars rate={0} />
+            <Stars rate={4} />
             <label>Praia de Malibu, Turismo Exótico</label>
           </div>
         </li>
         <li>
           <div className="hotImageDescription">
-            <Stars rate={4} />
+            <Stars rate={4.6} />
             <label>Ponto Turístico Principal de Maceió</label>
           </div>
           <div className="hotImage">

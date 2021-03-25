@@ -103,9 +103,14 @@ export const Hot = styled.ul`
       display: flex;
       height: 20rem;
       width: 17rem;
+      -webkit-border-radius: 2.5rem;
+      -moz-border-radius: 2.5rem;
       border-radius: 2.5rem;
       background: url('/images/paisagem.png') no-repeat;
-      box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+      /* box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25); */
+      box-shadow: rgba(0, 0, 0, 0.25);
+      background-size: cover;
+      border: none;
 
       div {
         background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 66, 61, 1));

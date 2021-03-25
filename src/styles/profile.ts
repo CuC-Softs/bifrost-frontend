@@ -1,132 +1,38 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-export const Header = styled.div`
+export const Header = styled.div.attrs({ id: 'header' })`
+  display: flex;
+  /* width: 100%;
+  height: 19.1rem; */
+  position: absolute;
   width: 41.4rem;
   height: 19.1rem;
-  display: flex;
+  left: 0rem;
+  top: 0rem;
 
-  div {
-    align-self: end;
-    justify-self: center;
-    margin-bottom: 1.4rem;
+  svg {
+    position: absolute;
+    width: 1.9rem;
+    height: 2.22rem;
+    left: 0.5rem;
+    top: 0.252rem;
+  }
+
+  #info {
     display: flex;
+    position: absolute;
+    width: 35.5rem;
+    height: 13.6rem;
+    left: 2.9rem;
+    top: 4.1rem;
 
-    img {
-      margin-right: 4.5rem;
-      border-radius: 50%;
-    }
-
-    #information {
-      display: flex;
-      flex-direction: column;
-      width: 23.3rem;
-      height: 10.5rem;
-      justify-content: space-between;
-      align-self: end;
-
-      #username {
-        width: 17.2rem;
-        height: 3rem;
-        border-radius: 50%;
-
-        background: #f3f3f3;
-        box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
-
-        label {
-          width: 13.1rem;
-          height: 1.8rem;
-
-          font-family: Roboto;
-          font-style: normal;
-          font-weight: 300;
-          font-size: 1.5rem;
-          line-height: 1.8rem;
-          justify-content: center;
-          /* identical to box height */
-          display: flex;
-          align-items: center;
-
-          color: #000000;
-        }
-      }
-
-      #numbers {
-        width: 23.3rem;
-        height: 3rem;
-        display: flex;
-        justify-content: space-between;
-
-        div {
-          width: 11.3rem;
-          height: 3rem;
-
-          background: #f3f3f3;
-          box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
-
-          label {
-            width: 6.5rem;
-            height: 1.8rem;
-
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            font-size: 1.5rem;
-            line-height: 1.8rem;
-            /* identical to box height */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: #000000;
-          }
-        }
-      }
-      #follow {
-        width: 11.3rem;
-        height: 3rem;
-        border-radius: 50%;
-
-        background: #28b5f4;
-        box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        label {
-          width: 5.2rem;
-          height: 1.8rem;
-
-          font-family: Roboto;
-          font-style: normal;
-          font-weight: 300;
-          font-size: 1.5rem;
-          line-height: 1.8rem;
-          /* identical to box height */
-          display: flex;
-          align-items: center;
-
-          color: #ffffff;
-        }
-      }
-
-      #arrowBack {
-        color: #fff;
-        width: 3rem;
-        height: 3rem;
-        position: fixed;
-        left: 0.5rem;
-        top: 0.5rem;
-      }
-
-      #config {
-        color: #fff;
-        width: 3rem;
-        height: 3rem;
-        position: fixed;
-        left: 40.9rem;
-        top: 0.5rem;
-      }
+    div {
+      position: absolute;
+      width: 10.6rem;
+      height: 10.6rem;
+      left: 2.9rem;
+      top: 4.1rem;
     }
   }
 `;

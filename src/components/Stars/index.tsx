@@ -9,6 +9,8 @@ interface StarsProps extends HTMLProps<HTMLDivElement> {
 const Stars: React.FC<StarsProps> = ({ rate }) => (
   <Container>
     <Rating
+      name="half-rating-read"
+      precision={0.1}
       readOnly
       value={rate}
       classes={{ iconFilled: 'Filled', iconEmpty: 'Empty' }}
