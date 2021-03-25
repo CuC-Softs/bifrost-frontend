@@ -187,7 +187,7 @@ export const Reviews = styled.div`
 
     background: #f9f9f9;
 
-    div {
+    div:first-of-type {
       font-family: Roboto;
       font-style: normal;
       font-weight: normal;
@@ -210,22 +210,100 @@ export const Reviews = styled.div`
       display: flex;
       flex-direction: column;
       width: 100%;
+      overflow-y: scroll;
+      max-height: 40rem;
+      margin-top: 1.5rem;
 
       li {
         list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto;
+        row-gap: 1rem;
+
+        .userNameText {
+          grid-row: 1;
+          grid-area: 1 / span 2;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 1.9rem;
+          line-height: 2.2rem;
+          display: flex;
+          align-items: center;
+
+          color: #00867d;
+        }
+
+        .userImage {
+          grid-row: 2;
+          grid-column: 1;
+          width: 6rem;
+          height: 6rem;
+          border-radius: 50%;
+        }
+
+        .userMessageText {
+          grid-row: 2;
+          grid-column: 2;
+          width: 29.2rem;
+          height: 19.6rem;
+
+          background: #c7f3ef;
+          border-radius: 3.5rem;
+
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 1.9rem;
+          line-height: 2.2rem;
+          display: flex;
+          padding: 2.2rem;
+          align-items: center;
+          text-align: center;
+
+          color: #00867d;
+        }
       }
     }
   }
 `;
 
 export const SendMessage = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  row-gap: 1rem;
   width: 100%;
-  position: fixed;
-  bottom: 0;
-  margin-bottom: 2.5rem;
+  align-items: center;
+  margin: 2.5rem 0;
+
+  span {
+    grid-row: 1;
+    grid-area: 1 / span 2;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.9rem;
+    line-height: 2.2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #00867d;
+  }
+
+  #userImage {
+    grid-row: 2;
+    grid-column: 1;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+  }
 
   #messageInput {
+    grid-row: 2;
+    grid-column: 2;
     width: 29.2rem;
     height: 5.1rem;
     padding: 0 2.5rem;
