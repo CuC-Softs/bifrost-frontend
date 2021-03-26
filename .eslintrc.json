@@ -40,6 +40,7 @@
       "jsx-a11y/control-has-associated-label": "off",
       "function-paren-newline": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
+      "no-confusing-arrow": "off",
       "import/extensions": [
         "error",
         "ignorePackages",
