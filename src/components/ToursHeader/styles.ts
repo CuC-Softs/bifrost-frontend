@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-export const HeaderExtension = styled.div`
+export const Header = styled.div`
   display: flex;
 
   width: 100%;
@@ -27,12 +27,12 @@ export const HeaderExtension = styled.div`
 
   button {
     background: none;
+  }
 
-    svg {
-      width: 2rem;
-      height: 2rem;
+  svg {
+    width: 2rem;
+    height: 2rem;
 
-      color: #00625b;
-    }
+    color: #00625b;
   }
 `;

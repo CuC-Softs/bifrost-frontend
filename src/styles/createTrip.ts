@@ -26,7 +26,7 @@ export const Image = styled.div`
   justify-content: center;
   align-items: center;
 
-  div {
+  input[type='button'] {
     width: 22rem;
     height: 2rem;
 
@@ -41,20 +41,18 @@ export const Image = styled.div`
       background: ${darken(0.1, '#c7f3ef')};
     }
 
-    label {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 1.9rem;
-      line-height: 2.2rem;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      text-align: center;
-      justify-content: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.9rem;
+    line-height: 2.2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-align: center;
+    justify-content: center;
 
-      color: #006c65;
-    }
+    color: #006c65;
   }
 `;
 
@@ -89,9 +87,9 @@ export const Body = styled.div`
 
   #title {
     position: absolute;
-    width: 39.6rem;
+    width: 32rem;
     height: 4.7rem;
-    left: 0.9rem;
+    left: 4.6rem;
     top: 49.1rem;
 
     background: #c7f3ef;
@@ -147,19 +145,24 @@ export const Body = styled.div`
       color: #006c65;
     }
   }
-
-  svg {
-    background: #e9e9e9;
+  button[type='button'] {
+    width: 5.7rem;
+    height: 5.7rem;
     mix-blend-mode: normal;
     position: absolute;
     left: 17.8rem;
     top: 79.5rem;
-
-    width: 5.7rem;
-    height: 5.7rem;
-
-    color: #006c65;
     border-radius: 50%;
+
+    svg {
+      background: #e9e9e9;
+
+      width: 5.7rem;
+      height: 5.7rem;
+
+      color: #006c65;
+      border-radius: 50%;
+    }
   }
 `;
 

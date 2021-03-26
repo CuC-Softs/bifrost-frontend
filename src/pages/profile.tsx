@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import React, { useEffect } from 'react';
 
 import Header from '../components/ProfileHeader';
@@ -7,7 +8,21 @@ import HeaderExtension from '../components/ProfileSubheader';
 import { Body } from '../styles/profile';
 
 const pages: React.FC = () => {
-  const isSelf = false;
+  const isSelf = true;
+
+  const testData = [
+    {
+      id: 1,
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      img: 'https://wallpaperaccess.com/full/2204414.jpg',
+    },
+    {
+      id: 2,
+      text: 'Descrição aqui.',
+      img: 'https://wallpaperaccess.com/full/2204414.jpg',
+    },
+  ];
 
   useEffect(() => {
     // eslint-disable-next-line operator-linebreak
@@ -26,81 +41,77 @@ const pages: React.FC = () => {
       <Body>
         {!isSelf ? (
           <>
-            <li className="listType1">
-              <img
-                src="https://wallpaperaccess.com/full/2204414.jpg"
-                alt="list-item-img"
-              />
-              <div className="normal">
-                <label>Descrição</label>
-              </div>
-            </li>
-            <li className="listType2">
-              <div className="normal">
-                <label>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </label>
-                <img
-                  src="https://wallpaperaccess.com/full/2204414.jpg"
-                  alt="list-item-img"
-                />
-              </div>
-            </li>
+            {testData.map(({ id, img, text }, i) => {
+              if (i % 2 === 0) {
+                return (
+                  <li key={id} className="listType1">
+                    <img src={img} alt="post-img" />
+                    <div className="normal">
+                      <label>{text}</label>
+                    </div>
+                  </li>
+                );
+              }
+              if (i % 2 === 1) {
+                return (
+                  <li key={id} className="listType2">
+                    <div className="normal">
+                      <label>{text}</label>
+                    </div>
+                    <img src={img} alt="post-img" />
+                  </li>
+                );
+              }
+            })}
           </>
         ) : (
           <>
-            <li className="listType1">
-              <img src="/images/plane.jpg" alt="see-logbooks" />
-              <div className="topButtons">
-                <label>Veja seus diários de bordo</label>
-              </div>
-            </li>
-            <li className="listType2">
-              <div className="topButtons">
-                <label>Veja seus planejamentos de viagens</label>
-              </div>
-              <img src="/images/calendar.jpg" alt="see-tours" />
-            </li>
-            <li className="listType1">
-              <img src="/images/editCalendar.jpg" alt="create-tour" />
-              <div className="topButtons">
-                <label>Crie um novo planejamento de viagem</label>
-              </div>
-            </li>
-            <li className="listType2">
-              <div className="normal">
-                <label>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </label>
-              </div>
-              <img
-                src="https://wallpaperaccess.com/full/2204414.jpg"
-                alt="list-item-img"
-              />
-            </li>
-            <li className="listType1">
-              <img
-                src="https://wallpaperaccess.com/full/2204414.jpg"
-                alt="list-item-img"
-              />
-              <div className="normal">
-                <label>Descrição</label>
-              </div>
-            </li>
+            <Link href="/logbooks">
+              <li className="listType1">
+                <img src="/images/plane.jpg" alt="see-logbooks" />
+                <div className="topButtons">
+                  <label>Seus diários de bordo</label>
+                </div>
+              </li>
+            </Link>
+            <Link href="/tours">
+              <li className="listType2">
+                <div className="topButtons">
+                  <label>Seus tours</label>
+                </div>
+                <img src="/images/calendar.jpg" alt="see-tours" />
+              </li>
+            </Link>
+            <Link href="/logbook/create">
+              <li className="listType1">
+                <img src="/images/editCalendar.jpg" alt="create-tour" />
+                <div className="topButtons">
+                  <label>Novo tour</label>
+                </div>
+              </li>
+            </Link>
+            {testData.map(({ id, img, text }, i) => {
+              if (i % 2 === 1) {
+                return (
+                  <li key={id} className="listType1">
+                    <img src={img} alt="post-img" />
+                    <div className="normal">
+                      <label>{text}</label>
+                    </div>
+                  </li>
+                );
+              }
+              if (i % 2 === 0) {
+                return (
+                  <li key={id} className="listType2">
+                    <div className="normal">
+                      <label>{text}</label>
+                    </div>
+                    <img src={img} alt="post-img" />
+                  </li>
+                );
+              }
+            })}
           </>
         )}
       </Body>
