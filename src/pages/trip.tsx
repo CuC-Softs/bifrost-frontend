@@ -4,6 +4,7 @@ import {
   AccountCircle,
 } from '@material-ui/icons';
 import Head from 'next/head';
+import Link from 'next/link';
 import {
   Header,
   LocationDescription,
@@ -21,7 +22,9 @@ const pages: React.FC = () => (
         <title>Trip</title>
       </Head>
       <Header>
-        <ArrowBack />
+        <Link href="/">
+          <ArrowBack />
+        </Link>
       </Header>
       <TripImages>
         <img
