@@ -31,7 +31,9 @@ const Home: React.FC = () => (
         <Search />
         <SearchBarInput />
       </SearchBarDiv>
-      <div id="slogan">FAÇA A VIAGEM DO SEUS SONHOS!</div>
+      <Link href="/logbook/create">
+        <div id="slogan">FAÇA A VIAGEM DO SEUS SONHOS!</div>
+      </Link>
       <Hot>
         <li>
           <div className="hotImage">

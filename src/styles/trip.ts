@@ -220,10 +220,11 @@ export const Reviews = styled.div`
         grid-template-columns: 1fr 3fr;
         grid-template-rows: auto;
         row-gap: 1rem;
+        margin-bottom: 2.5rem;
 
         .userNameText {
           grid-row: 1;
-          grid-area: 1 / span 2;
+          grid-column: 1 / span 2;
           font-family: Roboto;
           font-style: normal;
           font-weight: 300;
