@@ -21,6 +21,7 @@ export const Header1 = styled.div.attrs({ id: 'header' })`
       /* position: absolute; */
       width: 100%;
       height: 100%;
+      color: #fff;
 
       /* left: 0.5rem;
       top: 0.252rem; */

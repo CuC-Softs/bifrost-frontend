@@ -1,9 +1,9 @@
 import { HTMLProps } from 'react';
 import Link from 'next/link';
 
+import { ArrowBack } from '@material-ui/icons';
 import { Header1, Header2 } from './styles';
 
-import ArrowBack from '../../../public/images/arrow_back-white.svg';
 import Instagram from '../../../public/images/instagram-logo.svg';
 
 interface ProfileHeaderProps extends HTMLProps<HTMLDivElement> {
