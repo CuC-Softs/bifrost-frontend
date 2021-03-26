@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
-import { ArrowBack } from '@material-ui/icons';
+import { ArrowBack, ArrowForward } from '@material-ui/icons';
 import Router from 'next/router';
 import { useState } from 'react';
-import { Header, Main, Options } from '../../styles/createlogbook';
+import { Header, Main, Options, SubmitDiv } from '../../styles/createlogbook';
 
 const pages: React.FC = () => {
   const [pageIndex, setPageIndex] = useState(0);
@@ -48,6 +48,70 @@ const pages: React.FC = () => {
     },
   ];
 
+  function buildContent() {
+    if (pageIndex < 3) {
+      return (
+        <>
+          <Main>
+            {pagesDatas[pageIndex].mainTexts.map(text => (
+              <span>{text}</span>
+            ))}
+          </Main>
+          <Options>
+            {pagesDatas[pageIndex].optionsTexts.map(text => (
+              <button
+                type="button"
+                onClick={() => {
+                  setPageIndex(pageIndex + 1);
+                }}
+              >
+                {text}
+              </button>
+            ))}
+          </Options>
+        </>
+      );
+    }
+
+    return (
+      <>
+        <Main>
+          <span className="lastQuestion">Ajustes finais</span>
+          <span style={{ visibility: 'collapse' }} />
+          <span className="lastQuestion">Preencha esses últimos detalhes!</span>
+        </Main>
+        <Options>
+          <div>
+            <span>Quantos dias você planeja ficar?</span>
+            <input type="date" name="dateFrom" id="dateFrom" />
+            <span>até</span>
+            <input type="date" name="dateTo" id="dateTo" />
+          </div>
+          <div>
+            <span>Você prefere um local...?</span>
+            <input type="radio" name="P4-Q2-A1" id="P4-Q2-A1" />
+            <label htmlFor="P4-Q2-A1">Popular</label>
+            <input type="radio" name="P4-Q2-A2" id="P4-Q2-A2" />
+            <label htmlFor="P4-Q2-A2">Econômica</label>
+          </div>
+          <div>
+            <span>Para descanso, você prefere...</span>
+            <input type="radio" name="P4-Q2-A1" id="P4-Q3-A1" />
+            <label htmlFor="P4-Q3-A1">Hotel</label>
+            <input type="radio" name="P4-Q2-A2" id="P4-Q3-A2" />
+            <label htmlFor="P4-Q3-A2">Pousada</label>
+            <input type="radio" name="P4-Q2-A3" id="P4-Q3-A3" />
+            <label htmlFor="P4-Q3-A3">Já tenho um local</label>
+          </div>
+        </Options>
+        <SubmitDiv>
+          <span>Me mostre os resultados!</span>
+          <ArrowForward />
+        </SubmitDiv>
+      </>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -64,23 +128,7 @@ const pages: React.FC = () => {
           }}
         />
       </Header>
-      <Main>
-        {pagesDatas[pageIndex].mainTexts.map(text => (
-          <span>{text}</span>
-        ))}
-      </Main>
-      <Options>
-        {pagesDatas[pageIndex].optionsTexts.map(text => (
-          <button
-            type="submit"
-            onClick={() => {
-              setPageIndex(pageIndex + 1);
-            }}
-          >
-            {text}
-          </button>
-        ))}
-      </Options>
+      {buildContent()}
     </>
   );
 };
