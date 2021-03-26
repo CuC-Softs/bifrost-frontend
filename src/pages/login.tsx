@@ -94,7 +94,6 @@ const pages: React.FC = () => {
             </span>
           </button>
           <span>filler</span>
-          {/* <div style={{ display: 'flex', minWidth: '4.6rem', height: '1px' }} /> */}
         </div>
         <div id="carousel-controller">
           <button
