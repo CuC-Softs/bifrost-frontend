@@ -60,7 +60,7 @@ export const Main = styled.main`
 
     span {
       min-width: 31.6rem;
-      margin: 0 4.8rem;
+      margin: 0 4.7rem;
 
       font-family: Roboto;
       font-style: normal;
@@ -76,8 +76,8 @@ export const Main = styled.main`
       display: flex;
       flex-direction: column;
       /* min-width: 31.6rem; */
-      margin-left: 4.8rem;
-      margin-right: 4.8rem;
+      margin-left: 4.7rem;
+      margin-right: 4.7rem;
       align-items: center;
 
       span {
