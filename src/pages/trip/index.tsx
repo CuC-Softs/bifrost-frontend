@@ -12,8 +12,8 @@ import {
   MakeTripButton,
   Reviews,
   SendMessage,
-} from '../styles/trip';
-import Stars from '../components/Stars';
+} from '../../styles/trip';
+import Stars from '../../components/Stars';
 
 const pages: React.FC = () => (
   <>
