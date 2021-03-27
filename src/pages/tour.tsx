@@ -1,15 +1,11 @@
 import React, { useEffect } from 'react';
-import {
-  ArrowBack,
-  KeyboardArrowUp,
-  KeyboardArrowDown,
-  ArrowForward,
-  RemoveCircle,
-} from '@material-ui/icons';
+import { ArrowBack, ArrowForward } from '@material-ui/icons';
 import Head from 'next/head';
 
 import Link from 'next/link';
-import { AppBar, Header, SubHeader, PresetLi } from '../styles/tour';
+
+import { AppBar, Header, SubHeader, EntriesList } from '../styles/tour';
+import Entry from '../components/Entry';
 
 const pages: React.FC = () => {
   useEffect(() => {
@@ -52,16 +48,12 @@ const pages: React.FC = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </span>
       </SubHeader>
-      <PresetLi>
-        <div className="text">
-          <div className="buttons">
-            <KeyboardArrowUp className="up" />
-            <KeyboardArrowDown className="down" />
-          </div>
-          <div className="component" />
-          <RemoveCircle className="remove" />
-        </div>
-      </PresetLi>
+      <EntriesList>
+        <Entry className="text" />
+        <Entry className="image" />
+        <Entry className="video" />
+        <Entry className="location" />
+      </EntriesList>
     </>
   );
 };
