@@ -6,6 +6,14 @@ export const PresetLi = styled.li`
   width: 100%;
   height: fit-content;
 
+  button:hover {
+    cursor: pointer;
+  }
+
+  button {
+    background: none;
+  }
+
   & + li {
     margin-top: 5rem;
   }
@@ -23,21 +31,17 @@ export const PresetLi = styled.li`
 
     justify-content: space-between;
 
-    .upDownButton {
-      background: none;
+    .up {
+      width: 3rem;
+      height: 3rem;
 
-      .up {
-        width: 3rem;
-        height: 3rem;
+      color: #ffffff;
+    }
+    .down {
+      width: 3rem;
+      height: 3rem;
 
-        color: #ffffff;
-      }
-      .down {
-        width: 3rem;
-        height: 3rem;
-
-        color: #ffffff;
-      }
+      color: #ffffff;
     }
   }
   .component {
@@ -49,14 +53,19 @@ export const PresetLi = styled.li`
     border-radius: 0 3rem 3rem 0;
   }
 
-  .remove {
+  .removeButton {
     position: relative;
-    width: 2.457rem;
-    height: 2.675rem;
-    right: 1.224rem;
-    bottom: 1.3rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    right: 1.2rem;
+    bottom: 1.2rem;
 
-    color: #00625b;
+    .remove {
+      width: 100%;
+      height: 100%;
+
+      color: #00625b;
+    }
   }
 
   .text {
@@ -83,7 +92,8 @@ export const PresetLi = styled.li`
         display: flex;
         width: 100%;
         height: 100%;
-        overflow: auto;
+        overflow: hidden;
+        resize: none;
         background: none;
         color: #00423d;
         font-family: 'Roboto';
@@ -97,12 +107,73 @@ export const PresetLi = styled.li`
       }
     }
   }
+
   .image {
+    width: 100%;
+    display: flex;
+
     .component {
+      display: flex;
+      width: 100%;
+      height: fit-content;
+      min-height: 10rem;
+
+      background: #c7f3ef;
+      box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+      border-radius: 0 3rem 3rem 0;
+
+      overflow: hidden;
+
+      .entryImage {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+
+      .imgLocation {
+        position: absolute;
+
+        padding: 0.8rem;
+
+        button {
+          font-size: 1.2rem;
+          color: #f8f8f8;
+        }
+      }
     }
   }
   .video {
+    width: 100%;
+    display: flex;
+
     .component {
+      display: flex;
+      width: 100%;
+      height: fit-content;
+      min-height: 10rem;
+
+      background: #c7f3ef;
+      box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+      border-radius: 0 3rem 3rem 0;
+
+      overflow: hidden;
+
+      .entryImage {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+
+      .imgLocation {
+        position: absolute;
+
+        padding: 0.8rem;
+
+        button {
+          font-size: 1.2rem;
+          color: #f8f8f8;
+        }
+      }
     }
   }
   .map {

@@ -50,7 +50,10 @@ const pages: React.FC = () => {
       </SubHeader>
       <EntriesList>
         <Entry className="text" />
-        <Entry className="image" />
+        <Entry
+          className="image"
+          src="http://images6.fanpop.com/image/photos/39800000/Ononoki-Yotsugi-monogatari-series-39837625-1280-720.jpg"
+        />
         <Entry className="video" />
         <Entry className="location" />
       </EntriesList>

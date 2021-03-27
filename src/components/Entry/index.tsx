@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import {
   KeyboardArrowDown,
   KeyboardArrowUp,
@@ -9,11 +10,17 @@ import { PresetLi } from './styles';
 
 interface EntryProps extends HTMLProps<HTMLDivElement> {
   className: string;
+  src?: string;
 }
 
-const Entry: React.FC<EntryProps> = ({ className }) => {
-  function setFocus(e: HTMLDivElement) {
-    console.log(e.children[0].focus());
+const Entry: React.FC<EntryProps> = ({ className, src }) => {
+  function setFocus(element: HTMLDivElement) {
+    element.children[0].focus();
+  }
+
+  function autoGrow(element: HTMLTextAreaElement) {
+    element.style.height = '0.2rem';
+    element.style.height = `${element.scrollHeight}px`;
   }
 
   if (className === 'text') {
@@ -31,15 +38,20 @@ const Entry: React.FC<EntryProps> = ({ className }) => {
             </div>
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
             <div className="component" onClick={e => setFocus(e.target)}>
               <textarea
                 placeholder="Digite aqui"
-                style={{ resize: 'none' }}
+                maxLength={360}
                 name="text"
                 id="text"
+                onKeyPress={e => autoGrow(e.target)}
+                onKeyUp={e => autoGrow(e.target)}
               />
             </div>
-            <RemoveCircle className="remove" />
+            <button type="button" className="removeButton">
+              <RemoveCircle className="remove" />
+            </button>
           </div>
         </PresetLi>
       </>
@@ -49,13 +61,25 @@ const Entry: React.FC<EntryProps> = ({ className }) => {
     return (
       <>
         <PresetLi>
-          <div className="text">
+          <div className={className}>
             <div className="buttons">
-              <KeyboardArrowUp className="up" />
-              <KeyboardArrowDown className="down" />
+              <button type="button" className="upDownButton">
+                <KeyboardArrowUp className="up" />
+              </button>
+              <button type="button" className="upDownButton">
+                <KeyboardArrowDown className="down" />
+              </button>
             </div>
-            <div className="component" />
-            <RemoveCircle className="remove" />
+            <div className="component">
+              <div className="imgLocation">
+                <button type="button">Adicionar localização</button>
+              </div>
+              <img src={src} alt="entry_image" className="entryImage" />
+            </div>
+
+            <button type="button" className="removeButton">
+              <RemoveCircle className="remove" />
+            </button>
           </div>
         </PresetLi>
       </>
@@ -65,13 +89,25 @@ const Entry: React.FC<EntryProps> = ({ className }) => {
     return (
       <>
         <PresetLi>
-          <div className="text">
+          <div className={className}>
             <div className="buttons">
-              <KeyboardArrowUp className="up" />
-              <KeyboardArrowDown className="down" />
+              <button type="button" className="upDownButton">
+                <KeyboardArrowUp className="up" />
+              </button>
+              <button type="button" className="upDownButton">
+                <KeyboardArrowDown className="down" />
+              </button>
             </div>
-            <div className="component" />
-            <RemoveCircle className="remove" />
+            <div className="component">
+              <div className="imgLocation">
+                <button type="button">Adicionar localização</button>
+              </div>
+              <img src={src} alt="entry_image" className="entryImage" />
+            </div>
+
+            <button type="button" className="removeButton">
+              <RemoveCircle className="remove" />
+            </button>
           </div>
         </PresetLi>
       </>
@@ -83,11 +119,18 @@ const Entry: React.FC<EntryProps> = ({ className }) => {
         <PresetLi>
           <div className="text">
             <div className="buttons">
-              <KeyboardArrowUp className="up" />
-              <KeyboardArrowDown className="down" />
+              <button type="button" className="upDownButton">
+                <KeyboardArrowUp className="up" />
+              </button>
+              <button type="button" className="upDownButton">
+                <KeyboardArrowDown className="down" />
+              </button>
             </div>
             <div className="component" />
-            <RemoveCircle className="remove" />
+
+            <button type="button" className="removeButton">
+              <RemoveCircle className="remove" />
+            </button>
           </div>
         </PresetLi>
       </>
