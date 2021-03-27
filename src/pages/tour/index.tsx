@@ -4,8 +4,8 @@ import Head from 'next/head';
 
 import Link from 'next/link';
 
-import { AppBar, Header, SubHeader, EntriesList } from '../styles/tour';
-import Entry from '../components/Entry';
+import { AppBar, Header, SubHeader, EntriesList } from '../../styles/tour';
+import Entry from '../../components/Entry';
 
 const pages: React.FC = () => {
   useEffect(() => {

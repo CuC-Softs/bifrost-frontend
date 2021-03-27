@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/pages/.day.tsx", "src/pages/.logbook.tsx", "src/styles/.logbook.ts", "src/styles/.day.ts", "src/pages/trip/.create.tsx"  ],
   "exclude": [
     "node_modules"
   ]
