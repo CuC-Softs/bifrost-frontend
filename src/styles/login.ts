@@ -7,12 +7,21 @@ export const Header = styled.header`
   align-items: center;
   padding-top: 4rem;
 
+  @media (orientation: landscape) {
+    padding-top: 0;
+  }
+
   > svg {
     width: 3rem;
     height: 3rem;
     margin-bottom: 6.9rem;
 
     color: #00867d;
+
+    @media (orientation: landscape) {
+      width: 20.4rem;
+      height: 10.3rem;
+    }
   }
 `;
 
