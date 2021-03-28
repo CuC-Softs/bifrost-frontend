@@ -19,6 +19,10 @@ const pages: React.FC = () => {
     <>
       <Head>
         <title>Tour</title>
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
       </Head>
       <AppBar>
         <Link href="/">
@@ -54,7 +58,7 @@ const pages: React.FC = () => {
           className="image"
           src="http://images6.fanpop.com/image/photos/39800000/Ononoki-Yotsugi-monogatari-series-39837625-1280-720.jpg"
         />
-        <Entry className="video" />
+        <Entry className="video" src="/videos/videoplayback.mp4" />
         <Entry className="location" />
       </EntriesList>
     </>
