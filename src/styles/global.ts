@@ -93,6 +93,27 @@ export default createGlobalStyle`
     }
   }
 
+  body {
+    &::-webkit-scrollbar {
+      width: 2rem;
+      margin-top: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 0.5rem grey;
+      border-radius: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #c7f3ef;
+      border-radius: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #00867d;
+    }
+  }
+
   button {
     background: none;
 

@@ -141,19 +141,16 @@ export const Hot = styled.div`
         margin-top: 1rem;
       }
 
-      /* Track */
       &::-webkit-scrollbar-track {
         box-shadow: inset 0 0 0.5rem grey;
         border-radius: 1rem;
       }
 
-      /* Handle */
       &::-webkit-scrollbar-thumb {
         background: #c7f3ef;
         border-radius: 1rem;
       }
 
-      /* Handle on hover */
       &::-webkit-scrollbar-thumb:hover {
         background: #00867d;
       }
