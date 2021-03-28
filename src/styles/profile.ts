@@ -4,8 +4,32 @@ import { darken } from 'polished';
 export const Body = styled.ul`
   /* margin: 2.1rem 1.5rem 1.5rem 0; */
   display: flex;
-  width: 100%;
   flex-direction: column;
+
+  @media (orientation: landscape) {
+    flex-direction: row;
+    justify-content: center;
+
+    .options {
+      width: 26.67%;
+      margin: 5.483rem;
+    }
+
+    .posts {
+      width: 63.96%;
+      height: 77vh;
+      background: #f9f9f9;
+      padding: 2.9rem 13.8rem 0 13.8rem;
+      mix-blend-mode: darken;
+    }
+
+    .listType1 {
+      img {
+        width: 8.07%;
+        height: 8.07%;
+      }
+    }
+  }
 
   .listType1 {
     padding: 1rem;

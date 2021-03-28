@@ -167,6 +167,12 @@ export const Header2 = styled.div.attrs({ id: 'header' })`
 
       padding: 1.5rem 1.35rem 0.6rem;
 
+      @media (orientation: landscape) {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+
       .infoTile {
         display: flex;
         flex: 1;
@@ -203,6 +209,15 @@ export const Header2 = styled.div.attrs({ id: 'header' })`
     }
 
     .pfp {
+      @media (orientation: landscape) {
+        justify-content: start;
+        width: 7.38%;
+        height: 67.54%;
+        flex: 0;
+        align-self: center;
+        margin-left: 10.69%;
+      }
+
       display: flex;
       flex: 1;
 
@@ -210,6 +225,10 @@ export const Header2 = styled.div.attrs({ id: 'header' })`
       align-items: center;
 
       div {
+        @media (orientation: landscape) {
+          width: 100%;
+          height: 100%;
+        }
         display: flex;
         flex-direction: column;
 
@@ -219,6 +238,10 @@ export const Header2 = styled.div.attrs({ id: 'header' })`
 
         img {
           /* position: absolute; */
+          @media (orientation: landscape) {
+            width: 10.6rem;
+            height: 10.6rem;
+          }
           width: 9.6rem;
           height: 9.6rem;
           /* left: 2.9rem;
@@ -227,6 +250,9 @@ export const Header2 = styled.div.attrs({ id: 'header' })`
         }
 
         span {
+          @media (orientation: landscape) {
+            margin-top: 0.9rem;
+          }
           margin-top: 0.2rem;
 
           font-size: 1.4rem;
@@ -239,6 +265,11 @@ export const Header2 = styled.div.attrs({ id: 'header' })`
     }
 
     .ig {
+      @media (orientation: landscape) {
+        display: none;
+        width: 0;
+        height: 0;
+      }
       display: flex;
       flex: 0.405;
 
