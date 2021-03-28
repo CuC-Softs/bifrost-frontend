@@ -19,7 +19,7 @@ const Home: React.FC = () => (
     <Head>
       <title>Home</title>
     </Head>
-    <Header isLogged userAvatarUrl="/images/user-avatar.png">
+    <Header>
       <span>Planeje sua viagem</span>
     </Header>
     <Body>
