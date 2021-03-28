@@ -236,9 +236,9 @@ export const PresetLi = styled.li`
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         background: #c5c5c5;
         padding: 0.8rem;
+        justify-content: space-between;
       }
 
       .nextImage {
@@ -296,7 +296,7 @@ export const SearchBarDiv = styled.div`
   display: flex;
   align-items: center;
   border-radius: 2.5rem;
-  width: 25rem;
+  width: 80%;
   height: 1.6rem;
   background: #c7f3ef;
   justify-content: flex-end;

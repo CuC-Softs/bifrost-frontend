@@ -6,6 +6,8 @@ import Link from 'next/link';
 
 import { AppBar, Header, SubHeader, EntriesList } from '../../styles/tour';
 import Entry from '../../components/Entry';
+import EntryCreate from '../../components/EntryCreate';
+import FinishTourCreation from '../../components/FinishTourCreation';
 
 const pages: React.FC = () => {
   useEffect(() => {
@@ -52,6 +54,7 @@ const pages: React.FC = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </span>
       </SubHeader>
+      <EntryCreate />
       <EntriesList>
         <Entry className="text" />
         <Entry
@@ -61,6 +64,8 @@ const pages: React.FC = () => {
         <Entry className="video" src="/videos/videoplayback.mp4" />
         <Entry className="location" />
       </EntriesList>
+      <EntryCreate />
+      <FinishTourCreation />
     </>
   );
 };
