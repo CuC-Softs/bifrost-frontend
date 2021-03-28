@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { ArrowBack } from '@material-ui/icons';
 import { useEffect, useState } from 'react';
 import Router from 'next/router';
+import InstagramLogin from 'react-instagram-oauth';
 import { Header, Main } from '../styles/login';
 
 import Logo from '../components/Logo';
-import GoogleIcon from '../../public/images/google-icon.svg';
 
 const pages: React.FC = () => {
   const [currentCard, setCurrentCard] = useState(0);
@@ -93,8 +93,8 @@ const pages: React.FC = () => {
           <button type="submit">
             <span>
               <div>
-                <GoogleIcon />
-                Continuar com o Google
+                <img src="/images/instagram-login-icon.svg" alt="" />
+                Logar com o Instagram
               </div>
             </span>
           </button>
@@ -115,14 +115,14 @@ const pages: React.FC = () => {
             Compartilhamento de dados, como diários de bordo e as viagens que
             você fez.
           </span>
-          <button type="submit">
-            <span>
-              <div>
-                <GoogleIcon />
-                Continuar com o Google
-              </div>
-            </span>
-          </button>
+          <InstagramLogin
+            authCallback={(error, response) => {
+              console.log(response);
+            }}
+            appId="726703054680670"
+            appSecret="d8430976f7a5c0e6ae814a678ba2439f"
+            redirectUri="https://google.com/"
+          />
           <span>
             Ao sincronizar com uma rede social, você terá acesso à:
             <br />

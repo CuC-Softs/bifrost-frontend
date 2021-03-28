@@ -135,7 +135,8 @@ export const Main = styled.main`
 
         box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
         div {
-          svg {
+          svg,
+          img {
             width: 3rem;
             height: 3rem;
 
@@ -211,8 +212,10 @@ export const Main = styled.main`
         color: #a2e0da;
 
         box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
-        div {
-          svg {
+        div,
+        button {
+          svg,
+          img {
             width: 3rem;
             height: 3rem;
 
