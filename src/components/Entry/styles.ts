@@ -296,7 +296,7 @@ export const SearchBarDiv = styled.div`
   display: flex;
   align-items: center;
   border-radius: 2.5rem;
-  width: 25rem;
+  width: 80%;
   height: 1.6rem;
   background: #c7f3ef;
   justify-content: flex-end;

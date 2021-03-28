@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { AppBar, Header, SubHeader, EntriesList } from '../../styles/tour';
 import Entry from '../../components/Entry';
 import EntryCreate from '../../components/EntryCreate';
+import FinishTourCreation from '../../components/FinishTourCreation';
 
 const pages: React.FC = () => {
   useEffect(() => {
@@ -64,6 +65,7 @@ const pages: React.FC = () => {
         <Entry className="location" />
       </EntriesList>
       <EntryCreate />
+      <FinishTourCreation />
     </>
   );
 };

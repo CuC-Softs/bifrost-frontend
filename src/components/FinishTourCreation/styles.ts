@@ -2,28 +2,31 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
-  height: 3.7rem;
-  width: 100vw;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   input[type='button'] {
-    width: 10.15rem;
-    height: 100%;
-    background: #c7f3ef;
+    width: 11.023rem;
+    height: 3.8rem;
+
+    background: #00867d;
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    border-radius: 7.3rem;
 
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 1rem;
-    line-height: 1.2rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
     display: flex;
     align-items: center;
     text-align: center;
-    margin: 0 0.1rem;
     justify-content: center;
 
-    color: #00625b;
+    color: #c7f3ef;
+
+    & + input {
+      margin-left: 8rem;
+    }
   }
 `;
