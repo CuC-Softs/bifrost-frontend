@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -22,15 +22,92 @@ export const Header = styled.div`
   box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 
   @media (orientation: landscape) {
-    padding: 0;
+    padding: 0 2.5rem 0 1.5rem;
   }
 
   div {
     display: flex;
   }
 
-  button {
-    background: none;
+  > button:last-child {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-self: center;
+
+    @media (orientation: landscape) {
+      display: none;
+    }
+
+    img,
+    svg {
+      width: 100%;
+      height: 100%;
+      color: #4db6ac;
+    }
+  }
+`;
+
+interface InstagramButtonAndProfileAvatarProps {
+  isLogged: boolean;
+  hasAvatar: boolean;
+}
+
+export const InstagramButtonAndProfileAvatar = styled.div<InstagramButtonAndProfileAvatarProps>`
+  display: flex;
+  align-items: center;
+
+  button:first-child {
+    width: 3rem;
+    height: 3rem;
+
+    ${props =>
+      !props.isLogged && // eslint-disable-line
+      css`
+        display: none;
+      `}
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  button:nth-child(2) {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    margin-left: 1.5rem;
+
+    ${props =>
+      !props.isLogged && // eslint-disable-line
+      css`
+        display: none;
+      `}
+
+    svg, img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    img {
+      ${props =>
+      !props.hasAvatar && // eslint-disable-line
+        css`
+          display: none;
+        `}
+    }
+
+    svg {
+      color: #4db6ac;
+
+      ${props =>
+      props.hasAvatar && // eslint-disable-line
+        css`
+          display: none;
+        `}
+    }
   }
 
   button:last-child {
@@ -39,9 +116,11 @@ export const Header = styled.div`
     display: flex;
     align-self: center;
 
-    @media (orientation: landscape) {
-      margin-right: 2.5rem;
-    }
+    ${props =>
+      props.isLogged && // eslint-disable-line
+      css`
+        display: none;
+      `}
 
     img,
     svg {

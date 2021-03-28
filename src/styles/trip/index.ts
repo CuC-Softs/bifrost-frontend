@@ -359,6 +359,25 @@ export const Reviews = styled.div`
       max-height: 40rem;
       margin-top: 1.5rem;
 
+      &::-webkit-scrollbar {
+        width: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 0.5rem grey;
+        border-radius: 1rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #c7f3ef;
+        border-radius: 1rem;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #00867d;
+      }
+
       @media (orientation: landscape) {
         max-height: 38rem;
       }
