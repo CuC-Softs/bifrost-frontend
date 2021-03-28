@@ -4,9 +4,14 @@ import Head from 'next/head';
 
 import Link from 'next/link';
 
-import { AppBar, Header, SubHeader, EntriesList } from '../../styles/tour';
+import {
+  AppBar,
+  Header,
+  SubHeader,
+  EntriesList,
+  AddEntry,
+} from '../../styles/tour';
 import Entry from '../../components/Entry';
-import EntryCreate from '../../components/EntryCreate';
 import FinishTourCreation from '../../components/FinishTourCreation';
 
 const pages: React.FC = () => {
@@ -54,7 +59,20 @@ const pages: React.FC = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </span>
       </SubHeader>
-      <EntryCreate />
+      <AddEntry>
+        <button type="button" className="addEntryButton">
+          TEXTO
+        </button>
+        <button type="button" className="addEntryButton">
+          IMAGEM
+        </button>
+        <button type="button" className="addEntryButton">
+          VIDEO
+        </button>
+        <button type="button" className="addEntryButton">
+          LOCALIZAÇÃO
+        </button>
+      </AddEntry>
       <EntriesList>
         <Entry className="text" />
         <Entry
@@ -64,7 +82,28 @@ const pages: React.FC = () => {
         <Entry className="video" src="/videos/videoplayback.mp4" />
         <Entry className="location" />
       </EntriesList>
-      <EntryCreate />
+      <AddEntry>
+        <button
+          type="button"
+          className="addEntryButton"
+          // onClick={e => {
+          //   const newTxt = document.createElement('Entry');
+          //   newTxt.className = 'text';
+          //   document.querySelector('.entriesList').appendChild(newTxt);
+          // }}
+        >
+          TEXTO
+        </button>
+        <button type="button" className="addEntryButton">
+          IMAGEM
+        </button>
+        <button type="button" className="addEntryButton">
+          VIDEO
+        </button>
+        <button type="button" className="addEntryButton">
+          LOCALIZAÇÃO
+        </button>
+      </AddEntry>
       <FinishTourCreation />
     </>
   );

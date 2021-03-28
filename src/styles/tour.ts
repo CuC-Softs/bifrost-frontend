@@ -72,6 +72,35 @@ export const SubHeader = styled.div`
   }
 `;
 
-export const EntriesList = styled.ul`
+export const EntriesList = styled.ul.attrs({ className: 'entriesList' })`
   padding: 1rem;
+`;
+
+export const AddEntry = styled.div`
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  height: 3.7rem;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+
+  .addEntryButton {
+    width: 10.15rem;
+    height: 100%;
+    background: #c7f3ef;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 0.1rem;
+    justify-content: center;
+
+    color: #00625b;
+  }
 `;
