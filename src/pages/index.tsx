@@ -29,7 +29,9 @@ const Home: React.FC = () => (
           <SearchBarInput />
         </SearchBarDiv>
         <Link href="/tour/create">
-          <div id="slogan">FAÇA A VIAGEM DO SEUS SONHOS!</div>
+          <button type="button" id="slogan">
+            FAÇA A VIAGEM DO SEUS SONHOS!
+          </button>
         </Link>
       </div>
 
@@ -38,8 +40,10 @@ const Home: React.FC = () => (
           <Search />
           <SearchBarInput />
         </SearchBarDiv>
-        <Link href="/logbook/create">
-          <div id="slogan">FAÇA A VIAGEM DO SEUS SONHOS!</div>
+        <Link href="/tour/create">
+          <button type="button" id="slogan">
+            FAÇA A VIAGEM DO SEUS SONHOS!
+          </button>
         </Link>
         <ButtonsList>
           <button type="submit">Filtrar Opções</button>

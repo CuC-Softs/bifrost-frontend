@@ -93,5 +93,13 @@ export default createGlobalStyle`
     }
   }
 
+  button {
+    background: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   #__next {}
 `;

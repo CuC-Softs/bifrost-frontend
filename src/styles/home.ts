@@ -193,6 +193,10 @@ export const Hot = styled.div`
         background-size: cover;
         border: none;
 
+        &:hover {
+          cursor: pointer;
+        }
+
         @media (orientation: landscape) {
           width: 21.941rem;
           height: 26.329rem;
@@ -232,6 +236,11 @@ export const Hot = styled.div`
         width: 16.5rem;
         height: 18rem;
         padding: 0.2rem 0 1rem 0;
+
+        &:hover,
+        & label {
+          cursor: pointer;
+        }
 
         @media (orientation: landscape) {
           width: 21.295rem;

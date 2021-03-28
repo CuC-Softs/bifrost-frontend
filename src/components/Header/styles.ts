@@ -72,5 +72,9 @@ export const SubHeader = styled.div`
     text-align: center;
 
     color: #00625b;
+
+    & + span {
+      margin-left: 2rem;
+    }
   }
 `;
