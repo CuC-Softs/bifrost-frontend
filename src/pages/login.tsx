@@ -121,7 +121,7 @@ const pages: React.FC = () => {
             }}
             appId="726703054680670"
             appSecret="d8430976f7a5c0e6ae814a678ba2439f"
-            redirectUri="https://google.com/"
+            redirectUri="http://localhost:3000"
           />
           <span>
             Ao sincronizar com uma rede social, você terá acesso à:
