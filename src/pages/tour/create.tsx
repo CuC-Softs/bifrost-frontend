@@ -3,7 +3,14 @@ import Head from 'next/head';
 import { ArrowBack, ArrowForward } from '@material-ui/icons';
 import Router from 'next/router';
 import { useState } from 'react';
-import { Header, Main, Options, SubmitDiv } from '../../styles/tour/create';
+import {
+  Header,
+  Main,
+  Options,
+  SubmitDiv,
+  Container,
+} from '../../styles/tour/create';
+import DesktopHeader from '../../components/Header';
 
 const pages: React.FC = () => {
   const [pageIndex, setPageIndex] = useState(0);
@@ -106,19 +113,26 @@ const pages: React.FC = () => {
         </Options>
         <SubmitDiv>
           <span>Me mostre os resultados!</span>
-          <ArrowForward />
+          <button type="button">
+            <ArrowForward />
+          </button>
         </SubmitDiv>
       </>
     );
   }
 
   return (
-    <>
+    <Container>
       <Head>
         <title>Create Logbook</title>
       </Head>
+      <DesktopHeader>
+        <span>Planeje sua viagem</span>
+        <span>Adicione seu próprio local</span>
+      </DesktopHeader>
       <Header>
-        <ArrowBack
+        <button
+          type="button"
           onClick={() => {
             if (pageIndex > 0) {
               setPageIndex(pageIndex - 1);
@@ -126,10 +140,12 @@ const pages: React.FC = () => {
               Router.back();
             }
           }}
-        />
+        >
+          <ArrowBack />
+        </button>
       </Header>
       {buildContent()}
-    </>
+    </Container>
   );
 };
 

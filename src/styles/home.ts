@@ -141,19 +141,16 @@ export const Hot = styled.div`
         margin-top: 1rem;
       }
 
-      /* Track */
       &::-webkit-scrollbar-track {
         box-shadow: inset 0 0 0.5rem grey;
         border-radius: 1rem;
       }
 
-      /* Handle */
       &::-webkit-scrollbar-thumb {
         background: #c7f3ef;
         border-radius: 1rem;
       }
 
-      /* Handle on hover */
       &::-webkit-scrollbar-thumb:hover {
         background: #00867d;
       }
@@ -192,6 +189,10 @@ export const Hot = styled.div`
         box-shadow: rgba(0, 0, 0, 0.25);
         background-size: cover;
         border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
 
         @media (orientation: landscape) {
           width: 21.941rem;
@@ -232,6 +233,11 @@ export const Hot = styled.div`
         width: 16.5rem;
         height: 18rem;
         padding: 0.2rem 0 1rem 0;
+
+        &:hover,
+        & label {
+          cursor: pointer;
+        }
 
         @media (orientation: landscape) {
           width: 21.295rem;

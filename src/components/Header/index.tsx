@@ -1,9 +1,25 @@
 import { AccountCircle } from '@material-ui/icons';
 import Link from 'next/link';
+import { HTMLProps } from 'react';
 import Logo from '../Logo';
-import { Container, Header, SubHeader } from './styles';
+import InstagramLogo from '../../../public/images/instagram-icon.svg';
+import {
+  Container,
+  Header,
+  InstagramButtonAndProfileAvatar,
+  SubHeader,
+} from './styles';
 
-const DesktopHeader: React.FC = ({ children }) => (
+interface DesktopHeaderProps extends HTMLProps<HTMLDivElement> {
+  isLogged?: boolean;
+  userAvatarUrl?: string;
+}
+
+const DesktopHeader: React.FC<DesktopHeaderProps> = ({
+  children,
+  isLogged = false,
+  userAvatarUrl,
+}) => (
   <Container>
     <Header>
       <Link href="/">
@@ -11,11 +27,25 @@ const DesktopHeader: React.FC = ({ children }) => (
           <Logo />
         </button>
       </Link>
-      <Link href="/login">
-        <button type="submit">
+      <InstagramButtonAndProfileAvatar
+        isLogged={isLogged}
+        hasAvatar={!!userAvatarUrl}
+      >
+        <Link href="/login">
+          <button type="submit">
+            <InstagramLogo />
+          </button>
+        </Link>
+        <button type="button">
+          <img src={userAvatarUrl} alt="userAvatar" />
           <AccountCircle color="action" />
         </button>
-      </Link>
+        <Link href="/login">
+          <button type="submit">
+            <AccountCircle color="action" />
+          </button>
+        </Link>
+      </InstagramButtonAndProfileAvatar>
     </Header>
     <SubHeader>{children}</SubHeader>
   </Container>
