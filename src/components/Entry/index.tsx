@@ -4,11 +4,12 @@ import {
   KeyboardArrowUp,
   RemoveCircle,
   NavigateNext,
+  Search,
   // PlayArrow,
 } from '@material-ui/icons';
-import { HTMLProps } from 'react';
+import React, { HTMLProps } from 'react';
 
-import { PresetLi } from './styles';
+import { PresetLi, SearchBarDiv, SearchBarInput } from './styles';
 
 interface EntryProps extends HTMLProps<HTMLDivElement> {
   className: string;
@@ -147,13 +148,19 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
             </div>
             <div className="location">
               <div className="component">
-                <div className="selectors">
-                  <input type="button" value="Mapa" />
-                  <input type="button" value="Imagens" />
+                <div id="map">
+                  <div className="selectors">
+                    <input type="button" value="Mapa" />
+                    <input type="button" value="Imagens" />
+                  </div>
+                  <button type="button" className="nextImage">
+                    <NavigateNext />
+                  </button>
+                  <SearchBarDiv>
+                    <SearchBarInput />
+                    <Search />
+                  </SearchBarDiv>
                 </div>
-                <button type="button">
-                  <NavigateNext className="nextImage" />
-                </button>
               </div>
             </div>
 

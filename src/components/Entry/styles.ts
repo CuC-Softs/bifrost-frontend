@@ -227,13 +227,32 @@ export const PresetLi = styled.li`
       box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
       border-radius: 0 3rem 3rem 0;
 
+      padding: 0;
+
       overflow: hidden;
+
+      #map {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #c5c5c5;
+        padding: 0.8rem;
+      }
 
       .nextImage {
         width: 2.4rem;
         height: 2.4rem;
+        background: none;
+        align-self: flex-end;
 
-        color: #ffffff;
+        svg {
+          width: 2.4rem;
+          height: 2.4rem;
+
+          color: #ffffff;
+        }
       }
 
       .selectors {
@@ -271,4 +290,32 @@ export const PresetLi = styled.li`
       }
     }
   }
+`;
+
+export const SearchBarDiv = styled.div`
+  display: flex;
+  align-items: center;
+  border-radius: 2.5rem;
+  width: 25rem;
+  height: 1.6rem;
+  background: #c7f3ef;
+  justify-content: flex-end;
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: #00625b;
+    padding-right: 0.5rem;
+  }
+`;
+
+export const SearchBarInput = styled.input.attrs({ type: 'text' })`
+  border-radius: 2.5rem 0 0 2.5rem;
+  width: 100%;
+  height: 100%;
+  background: #c7f3ef;
+  padding: 0 0.5rem 0 1rem;
+  font-size: 1rem;
+  color: #00625b;
+  align-items: center;
 `;
