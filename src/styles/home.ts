@@ -70,7 +70,7 @@ export const Body = styled.div`
 
     background: #e1eae9;
     box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+    border-radius: 2.5rem;
 
     justify-content: center;
     align-items: center;

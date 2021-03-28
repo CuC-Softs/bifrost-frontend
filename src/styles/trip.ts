@@ -231,8 +231,8 @@ export const LocationDescription = styled.div`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 25px;
-    line-height: 29px;
+    font-size: 2.5rem;
+    line-height: 2.9rem;
     display: flex;
     width: 100%;
     padding-left: 2.6rem;

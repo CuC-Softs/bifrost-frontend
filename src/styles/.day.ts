@@ -66,12 +66,12 @@ export const TripCards = styled.ul`
     align-self: center;
 
     div {
-      width: 250px;
-      height: 100px;
+      width: 25.rem;
+      height: 10.rem;
 
       background: #e8e8e8;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 10px;
+      box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+      border-radius: 10rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -98,7 +98,7 @@ export const TripCards = styled.ul`
       height: 10rem;
 
       background: #c5c5c5;
-      border-radius: 10px;
+      border-radius: 1rem;
       margin-right: 3rem;
     }
   }

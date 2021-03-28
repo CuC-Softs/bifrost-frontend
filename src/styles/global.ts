@@ -12,69 +12,85 @@ export default createGlobalStyle`
     text-decoration: none;
     border: none;
 
-    /* @media (orientation: portrait) {
+    @media (orientation: portrait) {
       @media (min-width: 280px) {
-          font-size: 27%;
+          font-size: 42%;
       }
 
       @media (min-width: 320px) {
-          font-size: 31%;
+          font-size: 47%;
       }
 
       @media (min-width: 360px) {
-          font-size: 35%;
+          font-size: 53%;
       }
 
       @media (min-width: 375px) {
-          font-size: 36%;
+          font-size: 55%;
       }
 
       @media (min-width: 411px) {
-          font-size: 40%;
+          font-size: 61%;
+      }
+
+      @media (min-width: 414px) {
+          font-size: 62.5%;
       }
 
       @media (min-width: 540px) {
-          font-size: 52%;
+          font-size: 73%;
+      }
+
+      @media (min-width: 720px) {
+          font-size: 107%;
       }
 
       @media (min-width: 768px) {
-          font-size: 80%;
+          font-size: 114%;
       }
 
       @media (min-width: 1024px) {
-          font-size: 100%;
+          font-size: 140%;
+      }
+
+      @media (min-width: 1080px) {
+          font-size: 160%;
+      }
+
+      @media (min-width: 1440px) {
+          font-size: 210%;
       }
     }
 
     @media (orientation: landscape) {
-      @media (min-width: 568px) {
-          font-size: 36%;
+      @media (min-width: 800px) {
+          font-size: 33%;
       }
 
-      @media (min-width: 653px) {
-          font-size: 34%;
-      }
-
-      @media (min-width: 667px) {
-          font-size: 43%;
-      }
-
-      @media (min-width: 720px) {
-          font-size: 47%;
-      }
-
-      @media (min-width: 812px) {
-          font-size: 43%;
+      @media (min-width: 832px) {
+          font-size: 35%;
       }
 
       @media (min-width: 1024px) {
-          font-size: 76%;
+          font-size: 44%;
       }
 
-      @media (min-width: 1366px) {
-          font-size: 90%;
-      } */
-    /* } */
+      @media (min-width: 1280px) {
+          font-size: 54%;
+      }
+
+      @media (min-width: 1360px) {
+          font-size: 58.5%;
+      }
+
+      @media (min-width: 1440px) {
+          font-size: 62.5%;
+      }
+
+      @media (min-width: 2560px) {
+          font-size: 110%;
+      }
+    }
   }
 
   #__next {}

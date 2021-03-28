@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { ArrowBack, ArrowForward } from '@material-ui/icons';
 import Router from 'next/router';
 import { useState } from 'react';
-import { Header, Main, Options, SubmitDiv } from '../../styles/createlogbook';
+import { Header, Main, Options, SubmitDiv } from '../../styles/tour/create';
 
 const pages: React.FC = () => {
   const [pageIndex, setPageIndex] = useState(0);
