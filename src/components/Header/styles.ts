@@ -21,7 +21,7 @@ export const Header = styled.div`
     padding: 0;
   }
 
-  button {
+  button:last-child {
     width: 6rem;
     height: 6rem;
     display: flex;

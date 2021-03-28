@@ -6,7 +6,11 @@ import { Container, Header, SubHeader } from './styles';
 const DesktopHeader: React.FC = ({ children }) => (
   <Container>
     <Header>
-      <Logo />
+      <Link href="/">
+        <button type="submit">
+          <Logo />
+        </button>
+      </Link>
       <Link href="/login">
         <button type="submit">
           <AccountCircle color="action" />
