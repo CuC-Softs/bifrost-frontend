@@ -153,13 +153,40 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
                     <input type="button" value="Mapa" />
                     <input type="button" value="Imagens" />
                   </div>
-                  <button type="button" className="nextImage">
-                    <NavigateNext />
-                  </button>
                   <SearchBarDiv>
                     <SearchBarInput />
                     <Search />
                   </SearchBarDiv>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" className="removeButton">
+              <RemoveCircle className="remove" />
+            </button>
+          </div>
+        </PresetLi>
+
+        <PresetLi>
+          <div className="text">
+            <div className="buttons">
+              <button type="button" className="upDownButton">
+                <KeyboardArrowUp className="up" />
+              </button>
+              <button type="button" className="upDownButton">
+                <KeyboardArrowDown className="down" />
+              </button>
+            </div>
+            <div className="location">
+              <div className="component">
+                <div id="map">
+                  <div className="selectors">
+                    <input type="button" value="Mapa" />
+                    <input type="button" value="Imagens" />
+                  </div>
+                  <button type="button" className="nextImage">
+                    <NavigateNext />
+                  </button>
                 </div>
               </div>
             </div>

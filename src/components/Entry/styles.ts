@@ -236,9 +236,9 @@ export const PresetLi = styled.li`
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         background: #c5c5c5;
         padding: 0.8rem;
+        justify-content: space-between;
       }
 
       .nextImage {
