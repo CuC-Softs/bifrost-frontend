@@ -34,8 +34,8 @@ export const Main = styled.div`
     font-family: Roboto;
     font-style: normal;
     font-weight: 300;
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 1.7rem;
+    line-height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -9,12 +9,12 @@ import {
   VolumeOff,
   VolumeUp,
   VolumeDown,
-  SvgIconComponent,
   VolumeMute,
+  Search,
 } from '@material-ui/icons';
-import { HTMLProps, useEffect, useState } from 'react';
+import React, { HTMLProps, useEffect, useState } from 'react';
 
-import { PresetLi } from './styles';
+import { PresetLi, SearchBarDiv, SearchBarInput } from './styles';
 
 interface EntryProps extends HTMLProps<HTMLDivElement> {
   className: string;
@@ -239,13 +239,46 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
             </div>
             <div className="location">
               <div className="component">
-                <div className="selectors">
-                  <input type="button" value="Mapa" />
-                  <input type="button" value="Imagens" />
+                <div id="map">
+                  <div className="selectors">
+                    <input type="button" value="Mapa" />
+                    <input type="button" value="Imagens" />
+                  </div>
+                  <SearchBarDiv>
+                    <SearchBarInput />
+                    <Search />
+                  </SearchBarDiv>
                 </div>
-                <button type="button">
-                  <NavigateNext className="nextImage" />
-                </button>
+              </div>
+            </div>
+
+            <button type="button" className="removeButton">
+              <RemoveCircle className="remove" />
+            </button>
+          </div>
+        </PresetLi>
+
+        <PresetLi>
+          <div className="text">
+            <div className="buttons">
+              <button type="button" className="upDownButton">
+                <KeyboardArrowUp className="up" />
+              </button>
+              <button type="button" className="upDownButton">
+                <KeyboardArrowDown className="down" />
+              </button>
+            </div>
+            <div className="location">
+              <div className="component">
+                <div id="map">
+                  <div className="selectors">
+                    <input type="button" value="Mapa" />
+                    <input type="button" value="Imagens" />
+                  </div>
+                  <button type="button" className="nextImage">
+                    <NavigateNext />
+                  </button>
+                </div>
               </div>
             </div>
 

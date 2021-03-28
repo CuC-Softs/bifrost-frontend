@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { ArrowBack } from '@material-ui/icons';
 import { useEffect, useState } from 'react';
+import Router from 'next/router';
 import { Header, Main } from '../styles/login';
 
 import Logo from '../components/Logo';
@@ -62,10 +63,14 @@ const pages: React.FC = () => {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js" />
       </Head>
       <Header>
-        <Link href="/">
+        <button type="button" onClick={() => Router.back()}>
           <ArrowBack />
+        </button>
+        <Link href="/">
+          <button type="button">
+            <Logo />
+          </button>
         </Link>
-        <Logo />
       </Header>
       <Main>
         <span id="connect">Sincronize-se com uma rede social</span>
@@ -95,6 +100,44 @@ const pages: React.FC = () => {
           </button>
           <span>filler</span>
         </div>
+
+        <div id="desktopNoCarousal">
+          <span>
+            Ao sincronizar com uma rede social, você terá acesso à:
+            <br />
+            <br />
+            Seu próprio perfil no site, customizavel.
+            <br />
+            <br />
+            Ao sincronizar com uma rede social, você terá acesso à:
+            <br />
+            <br />
+            Compartilhamento de dados, como diários de bordo e as viagens que
+            você fez.
+          </span>
+          <button type="submit">
+            <span>
+              <div>
+                <GoogleIcon />
+                Continuar com o Google
+              </div>
+            </span>
+          </button>
+          <span>
+            Ao sincronizar com uma rede social, você terá acesso à:
+            <br />
+            <br />
+            Comentar em posts, seguir, e ver perfis privados de ouras pessoas.
+            <br />
+            <br />
+            Ao sincronizar com uma rede social, você terá acesso à:
+            <br />
+            <br />
+            Acesso total ao site, com direito de poder criar sua própria aba de
+            viagens.
+          </span>
+        </div>
+
         <div id="carousel-controller">
           <button
             id="previous"
