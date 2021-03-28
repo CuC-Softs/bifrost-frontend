@@ -16,5 +16,10 @@ export const Container = styled.div`
     height: 2.9rem;
     justify-self: flex-start;
     align-self: center;
+
+    @media (orientation: landscape) {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
   }
 `;
