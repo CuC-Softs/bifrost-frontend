@@ -4,9 +4,15 @@ import {
   KeyboardArrowUp,
   RemoveCircle,
   NavigateNext,
-  // PlayArrow,
+  PlayArrow,
+  Pause,
+  VolumeOff,
+  VolumeUp,
+  VolumeDown,
+  SvgIconComponent,
+  VolumeMute,
 } from '@material-ui/icons';
-import { HTMLProps } from 'react';
+import { HTMLProps, useEffect, useState } from 'react';
 
 import { PresetLi } from './styles';
 
@@ -16,6 +22,34 @@ interface EntryProps extends HTMLProps<HTMLDivElement> {
 }
 
 const Entry: React.FC<EntryProps> = ({ className, src }) => {
+  const [isPaused, setIsPaused] = useState(true);
+  const [isMute, setIsMute] = useState(false);
+  const [volume, setVolume] = useState(50);
+  // eslint-disable-next-line prettier/prettier
+  const [volumeIcon, setVolumeIcon] = useState(<VolumeDown />);
+
+  useEffect(() => {
+    if (!isMute && volume > 50) {
+      setVolumeIcon(<VolumeUp />);
+    } else if (!isMute && volume <= 50 && volume > 3) {
+      setVolumeIcon(<VolumeDown />);
+    } else if (!isMute && volume <= 3) {
+      setVolumeIcon(<VolumeMute />);
+    } else if (isMute) {
+      setVolumeIcon(<VolumeOff />);
+    }
+  }, [volume, isMute]);
+
+  function toggleMute() {
+    if (isMute) {
+      setIsMute(false);
+      document.querySelector<HTMLVideoElement>('.entryVideo').muted = false;
+    } else {
+      setIsMute(true);
+      document.querySelector<HTMLVideoElement>('.entryVideo').muted = true;
+    }
+  }
+
   function setFocus(element: HTMLDivElement) {
     element.children[0].focus();
   }
@@ -111,15 +145,73 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
                 poster="http://dingyue.ws.126.net/4PneSyuqk1BGQoK5bEEy2RqiqL=aezmsq8VwuzSoDvpV61558061116533.gif"
                 // poster="https://wallpaperaccess.com/full/2204414.jpg"
                 className="entryVideo"
+                onTimeUpdate={e => {
+                  document.querySelector<HTMLDivElement>(
+                    '.greenJuice',
+                  ).style.width = `${
+                    (e.target.currentTime / e.target.duration) * 100
+                  }%`;
+                }}
+                onEnded={e => {
+                  document.querySelector<HTMLDivElement>(
+                    '.greenJuice',
+                  ).style.width = '0';
+                  setIsPaused(true);
+                }}
               />
               <div className="videoControls">
-                <div className="tealBar">
-                  <div className="teal" />
+                <div className="greenBar">
+                  <div className="greenJuice" />
                 </div>
                 <div className="videoButtons">
-                  <button type="button" id="playPause">
-                    {/* <PlayArrow /> */}
+                  <button
+                    type="button"
+                    id="playPause"
+                    onClick={e => {
+                      if (!isPaused) {
+                        setIsPaused(true);
+                        document
+                          .querySelector<HTMLVideoElement>('.entryVideo')
+                          .pause();
+                      } else {
+                        setIsPaused(false);
+                        document
+                          .querySelector<HTMLVideoElement>('.entryVideo')
+                          .play();
+                      }
+                    }}
+                  >
+                    {!isPaused ? <Pause /> : <PlayArrow />}
                   </button>
+                  <div className="volumeSlider">
+                    <button
+                      type="button"
+                      className="volumeButton"
+                      onClick={e => toggleMute()}
+                    >
+                      {volumeIcon}
+                    </button>
+                    <div className="sliderPadding">
+                      <input
+                        type="range"
+                        name="volume"
+                        className="volume"
+                        value={volume}
+                        max={100}
+                        onInput={e => {
+                          document.querySelector<HTMLVideoElement>(
+                            '.entryVideo',
+                          ).volume = e.target.value / 100;
+                          setVolume(
+                            document.querySelector<HTMLVideoElement>(
+                              '.entryVideo',
+                            ).volume * 100,
+                          );
+                          console.log(volume);
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

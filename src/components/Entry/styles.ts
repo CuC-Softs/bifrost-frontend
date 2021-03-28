@@ -1,4 +1,3 @@
-import { PlayArrow } from '@material-ui/icons';
 import styled from 'styled-components';
 
 export const PresetLi = styled.li`
@@ -191,25 +190,101 @@ export const PresetLi = styled.li`
         flex-wrap: wrap;
         background: rgba(0, 0, 0, 0.7);
 
+        transform: translateY(100%) translateY(-0.2rem);
+        transition: transform 0.2s;
+
+        .greenBar {
+          height: 0.2rem;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background: rgba(199, 243, 239, 0.4);
+
+          .greenJuice {
+            height: 100%;
+            width: 0;
+            background: #00867d;
+          }
+        }
+
         .videoButtons {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: space-between;
+          padding-right: 0.8rem;
+          padding-left: 0.4rem;
+
           #playPause {
             border: 0;
             outline: 0;
 
-            /* svg {
+            svg {
               width: 1.4rem;
               height: 1.4rem;
               display: inline-block;
               color: #fff;
-              -webkit-font-smoothing: antialiased;
-            } */
+            }
           }
 
-          #playPause {
-            content: PlayArrow;
+          .volumeSlider {
+            display: flex;
+            height: 100%;
+            width: fit-content;
+
+            .volumeButton {
+              border: 0;
+              outline: 0;
+
+              svg {
+                width: 1.4rem;
+                height: 1.4rem;
+                display: inline-block;
+                color: #fff;
+              }
+            }
+
+            .sliderPadding {
+              display: flex
+              height: 100%;
+              width: 8rem;
+              align-items: center;
+
+              .volume {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 0.4rem;
+                border-radius: 1rem;
+                background: #fff;
+                outline: none;
+              }
+
+              .volume::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                border-radius: 100%;
+                width: 1.2rem;
+                height: 1.2rem;
+                background: #fff;
+                cursor: pointer;
+              }
+
+              .volume::-moz-range-thumb {
+                width: 2.5rem;
+                height: 2.5rem;
+                background: #fff;
+                cursor: pointer;
+              }
+            }
           }
         }
       }
+    }
+  }
+
+  .video:hover {
+    .videoControls {
+      transform: translateY(0);
     }
   }
 
