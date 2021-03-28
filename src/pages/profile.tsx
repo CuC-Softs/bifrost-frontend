@@ -2,7 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 
-import Header from '../components/ProfileHeader';
+import Header from '../components/Header';
+import Header2 from '../components/ProfileHeader';
 import HeaderExtension from '../components/ProfileSubheader';
 
 import { Body } from '../styles/profile';
@@ -36,7 +37,11 @@ const pages: React.FC = () => {
       <Head>
         <title>Profile</title>
       </Head>
-      <Header isSelf={isSelf} />
+      <Header>
+        <span>Planeje sua viagem</span>
+        <span>Adicione seu próprio local</span>
+      </Header>
+      <Header2 isSelf={isSelf} />
       <HeaderExtension isSelf={isSelf} />
       <Body>
         {!isSelf ? (
