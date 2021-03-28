@@ -18,12 +18,16 @@ export const Title = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 2rem;
-    line-height: 1.8rem;
+    line-height: normal;
     display: flex;
     align-items: center;
     text-align: center;
 
     color: #00625b;
+
+    @media (orientation: landscape) {
+      font-size: 4rem;
+    }
   }
 `;
 
@@ -34,10 +38,9 @@ export const Body = styled.ul`
   flex-direction: column;
 
   .listType1 {
-    padding: 1rem;
+    padding: 1.12% 2.42%;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
     height: fit-content;
@@ -69,7 +72,7 @@ export const Body = styled.ul`
       background: #f6f6f6;
       box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
       border-radius: 3.5rem;
-      align-items: center;
+
       justify-content: center;
 
       label {
@@ -80,21 +83,24 @@ export const Body = styled.ul`
         font-style: normal;
         font-weight: normal;
         font-size: 1.5rem;
-        line-height: 1.8rem;
+        line-height: normal;
         display: flex;
         align-items: center;
         text-align: center;
 
         color: #00625b;
+
+        @media (orientation: landscape) {
+          font-size: 3.5rem;
+        }
       }
     }
   }
 
   .listType2 {
-    padding: 1rem;
+    padding: 1.12% 2.42%;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
     height: fit-content;
@@ -137,12 +143,16 @@ export const Body = styled.ul`
         font-style: normal;
         font-weight: normal;
         font-size: 1.5rem;
-        line-height: 1.8rem;
+        line-height: normal;
         display: flex;
         align-items: center;
         text-align: center;
 
         color: #00625b;
+
+        @media (orientation: landscape) {
+          font-size: 3.5rem;
+        }
       }
     }
   }
