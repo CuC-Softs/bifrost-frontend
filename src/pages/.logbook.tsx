@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowBack } from '@material-ui/icons';
 import Head from 'next/head';
-import { Body, Header } from '../styles/logbook';
+import { Body, Header } from '../styles/.logbook';
 
 const pages: React.FC = () => (
   <>

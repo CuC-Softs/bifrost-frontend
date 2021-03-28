@@ -3,6 +3,8 @@ import {
   KeyboardArrowDown,
   KeyboardArrowUp,
   RemoveCircle,
+  NavigateNext,
+  // PlayArrow,
 } from '@material-ui/icons';
 import { HTMLProps } from 'react';
 
@@ -99,10 +101,27 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
               </button>
             </div>
             <div className="component">
-              <div className="imgLocation">
+              <div className="videoLocation">
                 <button type="button">Adicionar localização</button>
               </div>
-              <img src={src} alt="entry_image" className="entryImage" />
+              {/* Lembrar disso no futuro, por razões de acessibilidade */}
+              {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+              <video
+                src={src}
+                poster="http://dingyue.ws.126.net/4PneSyuqk1BGQoK5bEEy2RqiqL=aezmsq8VwuzSoDvpV61558061116533.gif"
+                // poster="https://wallpaperaccess.com/full/2204414.jpg"
+                className="entryVideo"
+              />
+              <div className="videoControls">
+                <div className="tealBar">
+                  <div className="teal" />
+                </div>
+                <div className="videoButtons">
+                  <button type="button" id="playPause">
+                    {/* <PlayArrow /> */}
+                  </button>
+                </div>
+              </div>
             </div>
 
             <button type="button" className="removeButton">
@@ -126,7 +145,17 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
                 <KeyboardArrowDown className="down" />
               </button>
             </div>
-            <div className="component" />
+            <div className="location">
+              <div className="component">
+                <div className="selectors">
+                  <input type="button" value="Mapa" />
+                  <input type="button" value="Imagens" />
+                </div>
+                <button type="button">
+                  <NavigateNext className="nextImage" />
+                </button>
+              </div>
+            </div>
 
             <button type="button" className="removeButton">
               <RemoveCircle className="remove" />

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import { ArrowBack } from '@material-ui/icons';
-import { TripCards, Header } from '../styles/day';
+import { TripCards, Header } from '../styles/.day';
 
 const pages: React.FC = () => (
   <>
