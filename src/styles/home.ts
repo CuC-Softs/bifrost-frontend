@@ -134,6 +134,10 @@ export const Hot = styled.div`
     @media (orientation: landscape) {
       flex-direction: row;
       overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     li {
