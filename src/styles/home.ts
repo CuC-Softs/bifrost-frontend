@@ -134,9 +134,28 @@ export const Hot = styled.div`
     @media (orientation: landscape) {
       flex-direction: row;
       overflow-x: scroll;
+      padding-bottom: 0.7rem;
 
       &::-webkit-scrollbar {
-        display: none;
+        height: 1rem;
+        margin-top: 1rem;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 0.5rem grey;
+        border-radius: 1rem;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #c7f3ef;
+        border-radius: 1rem;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #00867d;
       }
     }
 
@@ -230,6 +249,7 @@ export const Hot = styled.div`
           text-align: center;
 
           @media (orientation: landscape) {
+            max-width: 17rem;
             font-size: 2.96844rem;
             line-height: 3.5rem;
           }
