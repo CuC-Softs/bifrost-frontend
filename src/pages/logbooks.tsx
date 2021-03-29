@@ -9,16 +9,16 @@ const pages: React.FC = () => {
   const testData = [
     {
       id: 1,
-      title: 'Viagem para a casa da sua mãe',
+      title: 'Viagem para Sakhir, no Bahrein',
       text:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       img: 'https://wallpaperaccess.com/full/2204414.jpg',
     },
     {
       id: 2,
-      title: 'Comi o cu do Manuno',
+      title: 'Viagem para Malibu',
       text: 'Descrição aqui.',
-      img: 'https://wallpaperaccess.com/full/2204414.jpg',
+      img: '/images/foto-principal.png',
     },
   ];
 

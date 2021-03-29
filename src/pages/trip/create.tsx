@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Router from 'next/router';
 import React, { useEffect, useState } from 'react';
 
-import { Body, Body2, Header, Image, Location } from '../../styles/createTrip';
+import { Body, Body2, Header, Image, Location } from '../../styles/trip/create';
 
 const pages: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0);
