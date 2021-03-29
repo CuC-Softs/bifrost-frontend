@@ -293,6 +293,22 @@ export const Info = styled.div`
       font-size: 2rem;
     }
   }
+
+  div {
+    display: flex;
+    height: fit-content;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+      color: #00867d;
+
+      @media (orientation: landscape) {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+  }
 `;
 
 export const Reviews = styled.div`

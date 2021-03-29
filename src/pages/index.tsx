@@ -111,12 +111,20 @@ const Home: React.FC = () => {
                 <label>Hotel Paulista</label>
               </div>
             </div>
+            <div className="hotImageDescription">
+              {/* <Stars rate={4} /> */}
+              <label>Praia de Malibu, Turismo Exótico</label>
+            </div>
           </li>
           <li>
             <div className="hot2Image">
               <div>
                 <label>Resort da Baleia</label>
               </div>
+            </div>
+            <div className="hotImageDescription">
+              {/* <Stars rate={4.6} /> */}
+              <label>Ponto Turístico Principal de Maceió</label>
             </div>
           </li>
           <li>
@@ -125,12 +133,9 @@ const Home: React.FC = () => {
                 <label>Praia do Bonito</label>
               </div>
             </div>
-          </li>
-          <li>
-            <div className="hot2Image">
-              <div>
-                <label>Maceió Shopping</label>
-              </div>
+            <div className="hotImageDescription">
+              {/* <Stars rate={3} /> */}
+              <label>Diversificado para diversão familiar</label>
             </div>
           </li>
         </ul>

@@ -2,6 +2,8 @@ import {
   ArrowBack,
   FilterNoneRounded,
   AccountCircle,
+  TrendingUp,
+  TrendingDown,
 } from '@material-ui/icons';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -13,8 +15,8 @@ import {
   Reviews,
   SendMessage,
   Container,
-} from '../styles/post';
-import DesktopHeader from '../components/Header';
+} from '../../styles/post';
+import DesktopHeader from '../../components/Header';
 
 const pages: React.FC = () => (
   <Container>
@@ -33,7 +35,7 @@ const pages: React.FC = () => (
       <TripImages>
         <img
           id="TripMainImage"
-          src="images/foto-principal.png"
+          src="../images/foto-principal.png"
           alt="foto principal"
         />
       </TripImages>
@@ -46,6 +48,10 @@ const pages: React.FC = () => (
           AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
           AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         </span>
+        <div>
+          <TrendingUp />
+          <TrendingDown />
+        </div>
       </Info>
     </div>
     <div id="LocationDescriptionAndMakeTripButtonAndReviews">
@@ -59,9 +65,12 @@ const pages: React.FC = () => (
           AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
           AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         </span>
+        <div>
+          <TrendingUp />
+          <TrendingDown />
+        </div>
       </Info>
       <Reviews>
-        <span id="makeReview">Fazer review</span>
         <div id="reviews">
           <div>
             Comentarios:
@@ -73,7 +82,7 @@ const pages: React.FC = () => (
                 <span className="userNameText">Toby Fox Original</span>
                 <img
                   className="userImage"
-                  src="images/user-avatar.png"
+                  src="../images/user-avatar.png"
                   alt="userAvatar"
                 />
                 <span className="userMessageText">

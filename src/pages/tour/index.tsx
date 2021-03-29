@@ -10,11 +10,60 @@ import {
   SubHeader,
   EntriesList,
   AddEntry,
+  SaveDelete,
 } from '../../styles/tour';
 import Entry from '../../components/Entry';
-import FinishTourCreation from '../../components/FinishTourCreation';
 
 const pages: React.FC = () => {
+  const testData = [
+    {
+      id: 1,
+      order: 0,
+      textEntry: {
+        text: 'a',
+      },
+      imageEntry: null,
+      videoEntry: null,
+      locationEntry: null,
+    },
+    {
+      id: 2,
+      order: 2,
+      textEntry: {
+        text: 'b',
+      },
+      imageEntry: null,
+      videoEntry: null,
+      locationEntry: null,
+    },
+    {
+      id: 3,
+      order: 1,
+      textEntry: null,
+      imageEntry: {
+        media: {
+          path: '/images/paisagem.png',
+        },
+        location: null,
+      },
+      videoEntry: null,
+      locationEntry: null,
+    },
+    {
+      id: 4,
+      order: 1,
+      textEntry: null,
+      imageEntry: null,
+      videoEntry: {
+        media: {
+          path: '/videos/videoplayback.mp4',
+        },
+        location: null,
+      },
+      locationEntry: null,
+    },
+  ];
+
   useEffect(() => {
     // eslint-disable-next-line operator-linebreak
     document.getElementById('header').style.background =
@@ -26,10 +75,6 @@ const pages: React.FC = () => {
     <>
       <Head>
         <title>Tour</title>
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
       </Head>
       <AppBar>
         <Link href="/">
@@ -69,28 +114,66 @@ const pages: React.FC = () => {
         <button type="button" className="addEntryButton">
           VIDEO
         </button>
-        <button type="button" className="addEntryButton">
+        {/* <button type="button" className="addEntryButton">
           LOCALIZAÇÃO
-        </button>
+        </button> */}
       </AddEntry>
       <EntriesList>
-        <Entry className="text" />
+        {/* <Entry className="text" />
         <Entry
           className="image"
           src="http://images6.fanpop.com/image/photos/39800000/Ononoki-Yotsugi-monogatari-series-39837625-1280-720.jpg"
         />
-        <Entry className="video" src="/videos/videoplayback.mp4" />
-        <Entry className="location" />
+        <Entry className="video" src="/videos/videoplayback.mp4" /> */}
+        {/* <Entry className="location" /> */}
+        {testData.map(
+          ({ id, order, imageEntry, textEntry, videoEntry, locationEntry }) => {
+            if (textEntry != null) {
+              return (
+                <Entry
+                  key={id}
+                  id={1}
+                  entryId={id}
+                  className="text"
+                  value={textEntry.text}
+                />
+              );
+            }
+
+            if (imageEntry != null) {
+              return (
+                <Entry
+                  key={id}
+                  entryId={id}
+                  className="image"
+                  src={imageEntry.media.path}
+                />
+              );
+            }
+
+            if (videoEntry != null) {
+              return (
+                <Entry
+                  key={id}
+                  entryId={id}
+                  className="video"
+                  src={videoEntry.media.path}
+                />
+              );
+            }
+          },
+        )}
       </EntriesList>
       <AddEntry>
         <button
           type="button"
           className="addEntryButton"
-          // onClick={e => {
-          //   const newTxt = document.createElement('Entry');
-          //   newTxt.className = 'text';
-          //   document.querySelector('.entriesList').appendChild(newTxt);
-          // }}
+          onClick={e => {
+            const newTxt = document.createElement('Entry');
+            newTxt.className = 'text';
+            document.querySelector('#entriesList').appendChild(newTxt);
+            console.log(newTxt);
+          }}
         >
           TEXTO
         </button>
@@ -100,11 +183,14 @@ const pages: React.FC = () => {
         <button type="button" className="addEntryButton">
           VIDEO
         </button>
-        <button type="button" className="addEntryButton">
+        {/* <button type="button" className="addEntryButton">
           LOCALIZAÇÃO
-        </button>
+        </button> */}
       </AddEntry>
-      <FinishTourCreation />
+      <SaveDelete>
+        <input type="button" value="DELETAR" />
+        <input type="button" value="SALVAR" />
+      </SaveDelete>
     </>
   );
 };
