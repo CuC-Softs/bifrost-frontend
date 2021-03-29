@@ -32,14 +32,14 @@ export const Header = styled.div.attrs({ id: 'header' })`
     h1 {
       font-family: 'Roboto';
       font-size: 1.6rem;
-      color: #f8f8f8;
+      color: #00423d;
     }
 
     .headerDate {
       span {
         font-family: 'Roboto';
         font-size: 1rem;
-        color: #f8f8f8;
+        color: #00423d;
 
         display: flex;
         align-items: center;

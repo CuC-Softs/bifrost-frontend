@@ -19,7 +19,10 @@ const Home: React.FC = () => (
     <Head>
       <title>Home</title>
     </Head>
-    <Header>
+    <Header
+      isLogged
+      userAvatarUrl="https://f4.bcbits.com/img/a3638493734_10.jpg"
+    >
       <span>Planeje sua viagem</span>
     </Header>
     <Body>
@@ -55,17 +58,19 @@ const Home: React.FC = () => (
       <Hot>
         <span className="HotTitle">OS MAIS POPULARES DA SEMANA</span>
         <ul>
-          <li>
-            <div className="hotImage">
-              <div>
-                <label>Malibu</label>
+          <Link href="/trip">
+            <li>
+              <div className="hotImage">
+                <div>
+                  <label>Malibu</label>
+                </div>
               </div>
-            </div>
-            <div className="hotImageDescription">
-              {/* <Stars rate={4} /> */}
-              <label>Praia de Malibu, Turismo Exótico</label>
-            </div>
-          </li>
+              <div className="hotImageDescription">
+                {/* <Stars rate={4} /> */}
+                <label>Praia de Malibu, Turismo Exótico</label>
+              </div>
+            </li>
+          </Link>
           <li>
             <div className="hotImage">
               <div>

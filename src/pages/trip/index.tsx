@@ -63,12 +63,14 @@ const pages: React.FC = () => (
         </ul>
       </TripImages>
       <MakeTripButton>
-        <button type="submit">
-          <span>
-            PLANEJE SUA VIAGEM
-            <br />A PARTIR DESSE DESTINO
-          </span>
-        </button>
+        <Link href="/tour">
+          <button type="button">
+            <span>
+              PLANEJE SUA VIAGEM
+              <br />A PARTIR DESSE DESTINO
+            </span>
+          </button>
+        </Link>
       </MakeTripButton>
     </div>
     <div id="LocationDescriptionAndMakeTripButtonAndReviews">
@@ -85,12 +87,14 @@ const pages: React.FC = () => (
         <span id="offer">Economize a partir de R$126,87</span>
       </LocationDescription>
       <MakeTripButton>
-        <button type="submit">
-          <span>
-            PLANEJE SUA VIAGEM
-            <br />A PARTIR DESSE DESTINO
-          </span>
-        </button>
+        <Link href="/tour">
+          <button type="submit">
+            <span>
+              PLANEJE SUA VIAGEM
+              <br />A PARTIR DESSE DESTINO
+            </span>
+          </button>
+        </Link>
       </MakeTripButton>
       <Reviews>
         <span id="makeReview">Fazer review</span>

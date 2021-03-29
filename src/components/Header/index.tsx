@@ -31,7 +31,7 @@ const DesktopHeader: React.FC<DesktopHeaderProps> = ({
         isLogged={isLogged}
         hasAvatar={!!userAvatarUrl}
       >
-        <Link href="/login">
+        <Link href="/profile">
           <button type="submit">
             <InstagramLogo />
           </button>
@@ -40,7 +40,7 @@ const DesktopHeader: React.FC<DesktopHeaderProps> = ({
           <img src={userAvatarUrl} alt="userAvatar" />
           <AccountCircle color="action" />
         </button>
-        <Link href="/login">
+        <Link href="/profile">
           <button type="submit">
             <AccountCircle color="action" />
           </button>

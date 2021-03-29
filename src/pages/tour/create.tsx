@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { ArrowBack, ArrowForward } from '@material-ui/icons';
 import Router from 'next/router';
 import { useState } from 'react';
+import Link from 'next/link';
 import {
   Header,
   Main,
@@ -111,12 +112,14 @@ const pages: React.FC = () => {
             <label htmlFor="P4-Q3-A3">Já tenho um local</label>
           </div>
         </Options>
-        <SubmitDiv>
-          <span>Me mostre os resultados!</span>
-          <button type="button">
-            <ArrowForward />
-          </button>
-        </SubmitDiv>
+        <Link href="/tour">
+          <SubmitDiv>
+            <span>Me mostre os resultados!</span>
+            <button type="button">
+              <ArrowForward />
+            </button>
+          </SubmitDiv>
+        </Link>
       </>
     );
   }

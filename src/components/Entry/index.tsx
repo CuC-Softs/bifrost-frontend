@@ -207,7 +207,7 @@ const Entry: React.FC<EntryProps> = ({
               {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
               <video
                 src={src}
-                poster="http://dingyue.ws.126.net/4PneSyuqk1BGQoK5bEEy2RqiqL=aezmsq8VwuzSoDvpV61558061116533.gif"
+                poster="https://i.ytimg.com/vi/HxFcc09F10k/hqdefault.jpg"
                 // poster="https://wallpaperaccess.com/full/2204414.jpg"
                 className="entryVideo"
                 onTimeUpdate={e => {

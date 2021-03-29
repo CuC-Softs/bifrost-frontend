@@ -90,14 +90,16 @@ const pages: React.FC = () => {
             Acesso total ao site, com direito de criar sua própria aba de
             viagens.
           </span>
-          <button type="submit">
-            <span>
-              <div>
-                <img src="/images/instagram-login-icon.svg" alt="" />
-                Logar com o Instagram
-              </div>
-            </span>
-          </button>
+          <Link href="/">
+            <button type="submit">
+              <span>
+                <div>
+                  <img src="/images/instagram-login-icon.svg" alt="" />
+                  Logar com o Instagram
+                </div>
+              </span>
+            </button>
+          </Link>
           <span>filler</span>
         </div>
 

@@ -20,7 +20,8 @@ const pages: React.FC = () => {
       id: 1,
       order: 0,
       textEntry: {
-        text: 'a',
+        text:
+          'Eu me pergunto porque Malibu é tão famosa, aparecendo em todo tipo de filme, desenho animado, etc.',
       },
       imageEntry: null,
       videoEntry: null,
@@ -30,7 +31,7 @@ const pages: React.FC = () => {
       id: 2,
       order: 2,
       textEntry: {
-        text: 'b',
+        text: 'Coloquei uma imagem e um vídeo como referência.',
       },
       imageEntry: null,
       videoEntry: null,
@@ -67,7 +68,7 @@ const pages: React.FC = () => {
   useEffect(() => {
     // eslint-disable-next-line operator-linebreak
     document.getElementById('header').style.background =
-      "url('http://images3.memedroid.com/images/UPLOADED88/5f6a997801823.jpeg') no-repeat";
+      "url('/images/foto-principal.png') no-repeat";
     document.getElementById('header').style.backgroundSize = 'cover';
   }, []);
 
@@ -83,25 +84,20 @@ const pages: React.FC = () => {
       </AppBar>
       <Header>
         <div className="headerInfo">
-          <h1>TÍTULO MUITO LEGAL</h1>
+          <h1>Viagem para Malibu</h1>
           <div className="headerDate">
             <span>
-              27 de mar de 2021
+              29 de mar de 2021
               <ArrowForward />
-              28 de mar de 2021
+              31 de mar de 2021
             </span>
           </div>
         </div>
       </Header>
       <SubHeader>
         <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          Gosto muito de praia, do mar, então gostaria muito de conhecer as
+          famosas ondas de Malibu, e talvez até surfar um pouco.
         </span>
       </SubHeader>
       <AddEntry>
