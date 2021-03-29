@@ -1,6 +1,17 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  div:first-child {
+    @media (orientation: portrait) {
+      display: none;
+    }
+  }
+`;
+
 export const Header = styled.header`
   display: flex;
   flex-direction: column;
@@ -8,11 +19,13 @@ export const Header = styled.header`
   align-items: center;
   padding-top: 4rem;
 
-  > svg {
-    width: 3rem;
-    height: 3rem;
+  button {
+    > svg {
+      width: 3rem;
+      height: 3rem;
 
-    color: #00867d;
+      color: #00867d;
+    }
   }
 `;
 
@@ -334,11 +347,13 @@ export const SubmitDiv = styled.div`
     color: #00867d;
   }
 
-  svg {
-    height: 3rem;
-    width: 3rem;
-    margin-top: 2rem;
+  button {
+    svg {
+      height: 3rem;
+      width: 3rem;
+      margin-top: 2rem;
 
-    color: #c7f3ef;
+      color: #c7f3ef;
+    }
   }
 `;

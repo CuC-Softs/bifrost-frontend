@@ -18,20 +18,37 @@ export const Header = styled.div`
 
   span {
     font-size: 1.4rem;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    text-align: center;
+    height: 46.34%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     color: #00625b;
     font-weight: bold;
+
+    @media (orientation: landscape) {
+      font-size: 4.4rem;
+    }
   }
 
   button {
+    width: 4.83%;
+    height: 48.78%;
     background: none;
+    height: fit-content;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   svg {
-    width: 2rem;
-    height: 2rem;
+    width: 4.83%;
+    height: 48.78%;
 
     color: #00625b;
   }

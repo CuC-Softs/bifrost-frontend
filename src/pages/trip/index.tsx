@@ -13,7 +13,7 @@ import {
   Reviews,
   SendMessage,
   Container,
-} from '../../styles/trip';
+} from '../../styles/trip/index';
 import Stars from '../../components/Stars';
 import DesktopHeader from '../../components/Header';
 

@@ -31,15 +31,10 @@ export const Container = styled.div`
 
     @media (orientation: landscape) {
       align-items: center;
-      padding-bottom: 7.8rem;
       width: 79.8rem;
 
       background: #f9f9f9;
       border-radius: 2.5rem;
-
-      > div:last-child {
-        margin-top: 4.2rem;
-      }
     }
 
     @media (orientation: portrait) {
@@ -85,7 +80,7 @@ export const TripImages = styled.div`
   width: 100%;
 
   @media (orientation: landscape) {
-    padding: 5.9rem 7.8rem 0 7.8rem;
+    padding: 2.9rem 7.8rem 0 7.8rem;
   }
 
   img {
@@ -248,31 +243,70 @@ export const LocationDescription = styled.div`
   }
 `;
 
-export const MakeTripButton = styled.div`
+export const Info = styled.div`
   display: flex;
   width: 100%;
-  margin-top: 1.6rem;
+  margin-top: 0.6rem;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  @media (orientation: landscape) {
+    margin-top: 0.5rem;
+  }
 
-  button {
-    display: flex;
-    align-items: center;
+  h1 {
+    width: 100%;
+    height: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3rem;
     justify-content: center;
-    width: 36.7rem;
-    height: 14.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
 
-    background: #c7f3ef;
-    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
-    border-radius: 3.5rem;
+    color: #00867d;
 
-    span {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 2.4rem;
-      line-height: 2.8rem;
+    @media (orientation: portrait) {
+      text-align: start;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 1rem;
+      box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    }
+  }
 
+  span {
+    max-width: 90%;
+    height: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    justify-content: center;
+    text-align: center;
+    padding-top: 1rem;
+
+    color: #00867d;
+
+    @media (orientation: landscape) {
+      font-size: 2rem;
+    }
+  }
+
+  div {
+    display: flex;
+    height: fit-content;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
       color: #00867d;
+
+      @media (orientation: landscape) {
+        width: 5rem;
+        height: 5rem;
+      }
     }
   }
 `;
@@ -359,8 +393,27 @@ export const Reviews = styled.div`
       max-height: 40rem;
       margin-top: 1.5rem;
 
+      &::-webkit-scrollbar {
+        width: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 0.5rem grey;
+        border-radius: 1rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #c7f3ef;
+        border-radius: 1rem;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #00867d;
+      }
+
       @media (orientation: landscape) {
-        max-height: 38rem;
+        max-height: 52.5rem;
       }
 
       li {

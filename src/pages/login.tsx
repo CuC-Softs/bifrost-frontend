@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { ArrowBack } from '@material-ui/icons';
 import { useEffect, useState } from 'react';
 import Router from 'next/router';
+import InstagramLogin from 'react-instagram-oauth';
 import { Header, Main } from '../styles/login';
 
 import Logo from '../components/Logo';
-import GoogleIcon from '../../public/images/google-icon.svg';
 
 const pages: React.FC = () => {
   const [currentCard, setCurrentCard] = useState(0);
@@ -93,8 +93,8 @@ const pages: React.FC = () => {
           <button type="submit">
             <span>
               <div>
-                <GoogleIcon />
-                Continuar com o Google
+                <img src="/images/instagram-login-icon.svg" alt="" />
+                Logar com o Instagram
               </div>
             </span>
           </button>
@@ -115,12 +115,18 @@ const pages: React.FC = () => {
             Compartilhamento de dados, como diários de bordo e as viagens que
             você fez.
           </span>
-          <button type="submit">
+          <button type="button">
             <span>
-              <div>
-                <GoogleIcon />
-                Continuar com o Google
-              </div>
+              <InstagramLogin
+                authCallback={(error, response) => {
+                  console.log(response);
+                }}
+                appId="4522966094386994"
+                appSecret="dcb2fd8b9956c572be1349cadb76a13b"
+                redirectUri="https://localhost:3000/login"
+              />
+              <img src="/images/instagram-login-icon.svg" alt="" />
+              Logar com o Instagram
             </span>
           </button>
           <span>

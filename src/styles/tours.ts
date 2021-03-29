@@ -8,7 +8,7 @@ export const Body = styled.ul`
   flex-direction: column;
 
   .listType1 {
-    padding: 1rem;
+    padding: 1.12% 2.42%;
 
     display: flex;
     align-items: center;
@@ -60,6 +60,10 @@ export const Body = styled.ul`
         text-align: center;
 
         color: #00625b;
+
+        @media (orientation: landscape) {
+          font-size: 3rem;
+        }
       }
     }
   }
@@ -117,6 +121,10 @@ export const Body = styled.ul`
         text-align: center;
 
         color: #00625b;
+
+        @media (orientation: landscape) {
+          font-size: 3rem;
+        }
       }
     }
   }
