@@ -3,30 +3,84 @@ import {
   KeyboardArrowDown,
   KeyboardArrowUp,
   RemoveCircle,
-  NavigateNext,
+  // NavigateNext,
+  // NavigateBefore,
   PlayArrow,
   Pause,
   VolumeOff,
   VolumeUp,
   VolumeDown,
   VolumeMute,
-  Search,
+  // Search,
 } from '@material-ui/icons';
-import React, { HTMLProps, useEffect, useState } from 'react';
+
+import React, { HTMLAttributes, HTMLProps, useEffect, useState } from 'react';
+
+// import {
+//   GoogleMap,
+//   useLoadScript,
+//   Marker,
+//   InfoWindow,
+// } from '@react-google-maps/api';
 
 import { PresetLi, SearchBarDiv, SearchBarInput } from './styles';
 
 interface EntryProps extends HTMLProps<HTMLDivElement> {
   className: string;
   src?: string;
+  text?: string;
+  entryId: number;
+  // id: string;
 }
 
-const Entry: React.FC<EntryProps> = ({ className, src }) => {
+// const libraries = ['places'];
+
+// const mapContainerStyle = {
+//   width: '100%',
+//   flex: '1',
+//   display: 'flex',
+//   'flex-direction': 'column',
+//   background: '#c5c5c5',
+//   padding: '0.8rem',
+//   'justify-content': 'space-between',
+// };
+
+// const center = {
+//   lat: 0,
+//   lng: 0,
+// };
+
+const Entry: React.FC<EntryProps> = ({
+  className,
+  src,
+  value,
+  entryId,
+  // id,
+}) => {
   const [isPaused, setIsPaused] = useState(true);
   const [isMute, setIsMute] = useState(false);
   const [volume, setVolume] = useState(50);
   // eslint-disable-next-line prettier/prettier
   const [volumeIcon, setVolumeIcon] = useState(<VolumeDown />);
+  // const [locSelector, setLocSelector] = useState(0);
+  // const [location, setLocation] = useState('');
+
+  // const { isLoaded, loadError } = useLoadScript({
+  //   googleMapsApiKey: 'AIzaSyAclFGKqOIMvkBmRHFQ792FeOe3x1eA1b4',
+  //   libraries,
+  // });
+
+  // useEffect(() => {
+  //   if (locSelector === 0) {
+  //     document.querySelector('#mapSel').className = 'activeSelector';
+  //     document.querySelector('#locImgSel').className = 'normalSel';
+  //   }
+
+  //   if (locSelector === 1) {
+  //     document.querySelector('#mapSel').className = 'normalSel';
+  //     document.querySelector('#locImgSel').className = 'activeSelector';
+  //   }
+  // }, [locSelector]);
 
   useEffect(() => {
     if (!isMute && volume > 50) {
@@ -50,8 +104,17 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
     }
   }
 
+  function test() {
+    const ul = document.getElementById('entriesList');
+
+    const a = ul.childNodes.length - 1;
+
+    console.log(ul.childNodes[a].src);
+  }
+
   function setFocus(element: HTMLDivElement) {
     element.children[0].focus();
+    test();
   }
 
   function autoGrow(element: HTMLTextAreaElement) {
@@ -80,9 +143,11 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
                 placeholder="Digite aqui"
                 maxLength={360}
                 name="text"
+                defaultValue={value || ''}
                 id="text"
                 onKeyPress={e => autoGrow(e.target)}
                 onKeyUp={e => autoGrow(e.target)}
+                // onBlur={}
               />
             </div>
             <button type="button" className="removeButton">
@@ -107,9 +172,9 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
               </button>
             </div>
             <div className="component">
-              <div className="imgLocation">
+              {/* <div className="imgLocation">
                 <button type="button">Adicionar localização</button>
-              </div>
+              </div> */}
               <img src={src} alt="entry_image" className="entryImage" />
             </div>
 
@@ -135,9 +200,9 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
               </button>
             </div>
             <div className="component">
-              <div className="videoLocation">
+              {/* <div className="videoLocation">
                 <button type="button">Adicionar localização</button>
-              </div>
+              </div> */}
               {/* Lembrar disso no futuro, por razões de acessibilidade */}
               {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
               <video
@@ -224,72 +289,114 @@ const Entry: React.FC<EntryProps> = ({ className, src }) => {
       </>
     );
   }
-  if (className === 'location') {
-    return (
-      <>
-        <PresetLi>
-          <div className="text">
-            <div className="buttons">
-              <button type="button" className="upDownButton">
-                <KeyboardArrowUp className="up" />
-              </button>
-              <button type="button" className="upDownButton">
-                <KeyboardArrowDown className="down" />
-              </button>
-            </div>
-            <div className="location">
-              <div className="component">
-                <div id="map">
-                  <div className="selectors">
-                    <input type="button" value="Mapa" />
-                    <input type="button" value="Imagens" />
-                  </div>
-                  <SearchBarDiv>
-                    <SearchBarInput />
-                    <Search />
-                  </SearchBarDiv>
-                </div>
-              </div>
-            </div>
+  // if (className === 'location') {
+  //   return (
+  //     <>
+  //       <PresetLi>
+  //         <div className="text">
+  //           <div className="buttons">
+  //             <button type="button" className="upDownButton">
+  //               <KeyboardArrowUp className="up" />
+  //             </button>
+  //             <button type="button" className="upDownButton">
+  //               <KeyboardArrowDown className="down" />
+  //             </button>
+  //           </div>
+  //           <div className="location">
+  //             <div className="component">
+  //               <div id="map" className="map">
+  //                 <div className="selectors">
+  //                   <input
+  //                     type="button"
+  //                     value="Mapa"
+  //                     id="mapSel"
+  //                     className=".activeSelector"
+  //                     onClick={e => setLocSelector(0)}
+  //                   />
+  //                   <input
+  //                     type="button"
+  //                     value="Imagens"
+  //                     id="locImgSel"
+  //                     className=".normalSel"
+  //                     onClick={e => setLocSelector(1)}
+  //                   />
+  //                 </div>
+  //                 {locSelector === 0 ? (
+  //                   <SearchBarDiv>
+  //                     <form
+  //                       onSubmit={e => {
+  //                         e.preventDefault();
+  //                         // setLocation();
+  //                         setLocation(e.target.children[0].value);
+  //                       }}
+  //                     >
+  //                       <SearchBarInput />
+  //                     </form>
+  //                     <Search />
+  //                   </SearchBarDiv>
+  //                 ) : (
+  //                   <button type="button" className="nextImage">
+  //                     <NavigateNext />
+  //                   </button>
+  //                 )}
+  //               </div>
+  //             </div>
+  //           </div>
 
-            <button type="button" className="removeButton">
-              <RemoveCircle className="remove" />
-            </button>
-          </div>
-        </PresetLi>
+  //           <button type="button" className="removeButton">
+  //             <RemoveCircle className="remove" />
+  //           </button>
+  //         </div>
+  //       </PresetLi>
 
-        <PresetLi>
-          <div className="text">
-            <div className="buttons">
-              <button type="button" className="upDownButton">
-                <KeyboardArrowUp className="up" />
-              </button>
-              <button type="button" className="upDownButton">
-                <KeyboardArrowDown className="down" />
-              </button>
-            </div>
-            <div className="location">
-              <div className="component">
-                <div id="map">
-                  <div className="selectors">
-                    <input type="button" value="Mapa" />
-                    <input type="button" value="Imagens" />
-                  </div>
-                  <button type="button" className="nextImage">
-                    <NavigateNext />
-                  </button>
-                </div>
-              </div>
-            </div>
+  //       <PresetLi>
+  //         <div className="text">
+  //           <div className="buttons">
+  //             <button type="button" className="upDownButton">
+  //               <KeyboardArrowUp className="up" />
+  //             </button>
+  //             <button type="button" className="upDownButton">
+  //               <KeyboardArrowDown className="down" />
+  //             </button>
+  //           </div>
+  //           <div className="location">
+  //             <div className="component">
+  //               <div className="map">
+  //                 <GoogleMap
+  //                   mapContainerStyle={mapContainerStyle}
+  //                   zoom={8}
+  //                   center={center}
+  //                 />
+  //                 {locSelector === 0 ? (
+  //                   <SearchBarDiv>
+  //                     <form
+  //                       onSubmit={e => {
+  //                         e.preventDefault();
+  //                         // setLocation();
+  //                         setLocation(e.target.children[0].value);
+  //                       }}
+  //                     >
+  //                       <SearchBarInput />
+  //                     </form>
+  //                     <Search />
+  //                   </SearchBarDiv>
+  //                 ) : (
+  //                   <button type="button" className="nextImage">
+  //                     <NavigateNext />
+  //                   </button>
+  //                 )}
+  //               </div>
+  //             </div>
+  //           </div>
 
-            <button type="button" className="removeButton">
-              <RemoveCircle className="remove" />
-            </button>
-          </div>
-        </PresetLi>
-      </>
-    );
-  }
+  //           <button type="button" className="removeButton">
+  //             <RemoveCircle className="remove" />
+  //           </button>
+  //         </div>
+  //       </PresetLi>
+  //     </>
+  //   );
+  // }
 };
 
 export default Entry;

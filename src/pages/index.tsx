@@ -58,7 +58,7 @@ const Home: React.FC = () => (
               </div>
             </div>
             <div className="hotImageDescription">
-              <Stars rate={4} />
+              {/* <Stars rate={4} /> */}
               <label>Praia de Malibu, Turismo Exótico</label>
             </div>
           </li>
@@ -69,7 +69,7 @@ const Home: React.FC = () => (
               </div>
             </div>
             <div className="hotImageDescription">
-              <Stars rate={4.6} />
+              {/* <Stars rate={4.6} /> */}
               <label>Ponto Turístico Principal de Maceió</label>
             </div>
           </li>
@@ -80,7 +80,7 @@ const Home: React.FC = () => (
               </div>
             </div>
             <div className="hotImageDescription">
-              <Stars rate={3} />
+              {/* <Stars rate={3} /> */}
               <label>Diversificado para diversão familiar</label>
             </div>
           </li>

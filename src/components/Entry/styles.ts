@@ -103,6 +103,7 @@ export const PresetLi = styled.li`
 
         ::placeholder {
           color: #00423d;
+          opacity: 0.7;
           font-family: 'Roboto';
           font-size: 1rem;
         }
@@ -118,7 +119,8 @@ export const PresetLi = styled.li`
       display: flex;
       width: 100%;
       height: fit-content;
-      min-height: 10rem;
+      max-height: 10rem;
+      min-height: 20rem;
 
       background: #c7f3ef;
       box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
@@ -127,9 +129,9 @@ export const PresetLi = styled.li`
       overflow: hidden;
 
       .entryImage {
-        display: flex;
         width: 100%;
         height: 100%;
+        /* background-size: cover; */
       }
 
       .imgLocation {
@@ -306,7 +308,7 @@ export const PresetLi = styled.li`
 
       overflow: hidden;
 
-      #map {
+      .map {
         width: 100%;
         flex: 1;
         display: flex;
@@ -334,15 +336,13 @@ export const PresetLi = styled.li`
         width: 12.3rem;
         height: 2.6rem;
         display: flex;
-        background: #ededed;
+        background: #c4c4c4;
         justify-content: space-between;
         border-radius: 36rem;
 
         input[type='button'] {
           width: 6.1rem;
           height: 2.6rem;
-
-          background: #ffffff;
 
           font-family: Roboto;
           font-style: normal;
@@ -358,9 +358,19 @@ export const PresetLi = styled.li`
 
           border-radius: 36rem 0 0 36rem;
 
+          transition: background 0.1s;
+
           & + input[type='button'] {
             border-radius: 0 36rem 36rem 0;
           }
+        }
+
+        .normalSel {
+          background: #f8f8f8;
+        }
+
+        .activeSelector {
+          background: #e6e6e6;
         }
       }
     }
@@ -375,6 +385,12 @@ export const SearchBarDiv = styled.div`
   height: 1.6rem;
   background: #c7f3ef;
   justify-content: flex-end;
+  box-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.25);
+
+  form {
+    width: 100%;
+    height: 100%;
+  }
 
   svg {
     width: 1.6rem;
