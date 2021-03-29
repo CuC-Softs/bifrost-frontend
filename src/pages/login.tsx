@@ -115,14 +115,20 @@ const pages: React.FC = () => {
             Compartilhamento de dados, como diários de bordo e as viagens que
             você fez.
           </span>
-          <InstagramLogin
-            authCallback={(error, response) => {
-              console.log(response);
-            }}
-            appId="726703054680670"
-            appSecret="d8430976f7a5c0e6ae814a678ba2439f"
-            redirectUri="http://localhost:3000"
-          />
+          <button type="button">
+            <span>
+              <InstagramLogin
+                authCallback={(error, response) => {
+                  console.log(response);
+                }}
+                appId="4522966094386994"
+                appSecret="dcb2fd8b9956c572be1349cadb76a13b"
+                redirectUri="https://localhost:3000/login"
+              />
+              <img src="/images/instagram-login-icon.svg" alt="" />
+              Logar com o Instagram
+            </span>
+          </button>
           <span>
             Ao sincronizar com uma rede social, você terá acesso à:
             <br />
