@@ -119,9 +119,9 @@ const pages: React.FC = () => {
             authCallback={(error, response) => {
               console.log(response);
             }}
-            appId="726703054680670"
-            appSecret="d8430976f7a5c0e6ae814a678ba2439f"
-            redirectUri="http://localhost:3000"
+            appId="4522966094386994"
+            appSecret="dcb2fd8b9956c572be1349cadb76a13b"
+            redirectUri="https://localhost:3000/login"
           />
           <span>
             Ao sincronizar com uma rede social, você terá acesso à:
