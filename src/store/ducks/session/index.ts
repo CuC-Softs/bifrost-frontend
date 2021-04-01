@@ -6,7 +6,7 @@ import produce from 'immer';
 import { SessionState, SessionTypes } from './types';
 
 const INITIAL_STATE: SessionState = {
-  user: {},
+  user: null,
 };
 
 const reducer: Reducer<SessionState> = (state = INITIAL_STATE, action) => {

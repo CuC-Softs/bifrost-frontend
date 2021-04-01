@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ArrowBack } from '@material-ui/icons';
 import { useEffect, useState } from 'react';
 import Router from 'next/router';
-import InstagramLogin from 'react-instagram-oauth';
 import { useDispatch } from 'react-redux';
 import * as SessionActions from '../store/ducks/session/actions';
 import { Header, Main } from '../styles/login';
@@ -93,16 +92,24 @@ const pages: React.FC = () => {
             Acesso total ao site, com direito de criar sua própria aba de
             viagens.
           </span>
-          <Link href="/">
-            <button type="submit">
-              <span>
-                <div>
-                  <img src="/images/instagram-login-icon.svg" alt="" />
-                  Logar com o Instagram
-                </div>
-              </span>
-            </button>
-          </Link>
+          <button
+            type="submit"
+            onClick={() => {
+              dispatch(
+                SessionActions.login({
+                  id: 1,
+                  imageUrl: '/images/user-avatar.png',
+                }),
+              );
+            }}
+          >
+            <span>
+              <div>
+                <img src="/images/instagram-login-icon.svg" alt="" />
+                Logar com o Instagram
+              </div>
+            </span>
+          </button>
           <span>filler</span>
         </div>
 
@@ -120,22 +127,19 @@ const pages: React.FC = () => {
             Compartilhamento de dados, como diários de bordo e as viagens que
             você fez.
           </span>
-          <button type="button">
+          <button
+            type="button"
+            onClick={() => {
+              dispatch(
+                SessionActions.login({
+                  id: 1,
+                  imageUrl: '/images/user-avatar.png',
+                }),
+              );
+              console.log('user setted');
+            }}
+          >
             <span>
-              <InstagramLogin
-                authCallback={(error, response) => {
-                  dispatch(
-                    SessionActions.login({
-                      id: 1,
-                      imageUrl: '/images/user-avatar.png',
-                    }),
-                  );
-                  console.log(response);
-                }}
-                appId="4522966094386994"
-                appSecret="dcb2fd8b9956c572be1349cadb76a13b"
-                redirectUri="https://localhost:3000/login"
-              />
               <img src="/images/instagram-login-icon.svg" alt="" />
               Logar com o Instagram
             </span>

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-shadow
 export enum SessionTypes {
   LOGIN = '@session/LOGIN',
 }
@@ -8,5 +9,5 @@ export interface User {
 }
 
 export interface SessionState {
-  user: User;
+  user: User | null;
 }

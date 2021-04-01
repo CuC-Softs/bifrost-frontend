@@ -66,6 +66,7 @@ export const Body = styled.div`
     @media (orientation: landscape) {
       margin-top: 0;
       margin-left: 9rem;
+      flex-shrink: 0;
     }
 
     background: #e1eae9;
@@ -95,10 +96,12 @@ export const DesktopSearchBarAndPlus = styled.div`
 
 export const SearchBarDiv = styled.div`
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 2.5rem;
   width: 34.5rem;
   height: 3.3rem;
+  min-width: 20rem;
   background: #c7f3ef;
   padding: 0 1.7rem;
 
@@ -133,7 +136,7 @@ export const Hot = styled.div`
 
     @media (orientation: landscape) {
       flex-direction: row;
-      overflow-x: scroll;
+      overflow-x: auto;
       padding-bottom: 0.7rem;
 
       &::-webkit-scrollbar {
@@ -268,13 +271,14 @@ export const Hot = styled.div`
 export const ButtonsList = styled.div`
   display: flex;
   margin-top: 4rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   max-width: 100%;
   padding: 0 8.6rem;
 
   @media (orientation: landscape) {
     margin-top: 0;
     margin-left: 1rem;
+    max-width: 66rem;
   }
 
   &::-webkit-scrollbar {
@@ -346,6 +350,7 @@ export const Hot2 = styled.div`
 
     li {
       list-style: none;
+      cursor: pointer;
     }
 
     .hot2Image {

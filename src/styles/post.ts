@@ -99,7 +99,7 @@ export const TripImages = styled.div`
 
   ul {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     margin: 1.5rem 0 0 1.3rem;
     max-width: 100%;
 
@@ -389,7 +389,7 @@ export const Reviews = styled.div`
       display: flex;
       flex-direction: column;
       width: 100%;
-      overflow-y: scroll;
+      overflow-y: auto;
       max-height: 40rem;
       margin-top: 1.5rem;
 

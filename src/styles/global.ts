@@ -63,28 +63,28 @@ export default createGlobalStyle`
     }
 
     @media (orientation: landscape) {
-      @media (min-width: 800px) {
-          font-size: 33%;
+      @media (min-width: 800px), (max-width: 799px) {
+          font-size: 30%;
       }
 
       @media (min-width: 832px) {
-          font-size: 35%;
+          font-size: 33%;
       }
 
       @media (min-width: 1024px) {
-          font-size: 44%;
+          font-size: 35%;
       }
 
       @media (min-width: 1280px) {
-          font-size: 54%;
+          font-size: 44%;
       }
 
       @media (min-width: 1360px) {
-          font-size: 58.5%;
+          font-size: 54%;
       }
 
       @media (min-width: 1440px) {
-          font-size: 62.5%;
+          font-size: 58.5%;
       }
 
       @media (min-width: 2560px) {
