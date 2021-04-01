@@ -1,6 +1,6 @@
 import { AccountCircle } from '@material-ui/icons';
 import Link from 'next/link';
-import { HTMLProps } from 'react';
+import { HtmlHTMLAttributes } from 'react';
 import { useSelector } from 'react-redux';
 import Logo from '../Logo';
 import InstagramLogo from '../../../public/images/instagram-icon.svg';
@@ -13,8 +13,16 @@ import {
 import { ApplicationState } from '../../store';
 import { User } from '../../store/ducks/session/types';
 
-const DesktopHeader: React.FC = ({ children }) => {
+interface DesktopHeaderProps extends HtmlHTMLAttributes<HTMLSpanElement> {
+  children: {
+    linkAdress: string;
+    text: string;
+  }[];
+}
+
+const DesktopHeader: React.FC<DesktopHeaderProps> = ({ children }) => {
   const user = useSelector<ApplicationState, User | null>(s => s.session.user);
+
   return (
     <Container>
       <Header>
@@ -45,7 +53,15 @@ const DesktopHeader: React.FC = ({ children }) => {
           </Link>
         </InstagramButtonAndProfileAvatar>
       </Header>
-      <SubHeader>{children}</SubHeader>
+      <SubHeader>
+        {children.map(child => (
+          <Link href={child.linkAdress}>
+            <button type="button">
+              <span>{child.text}</span>
+            </button>
+          </Link>
+        ))}
+      </SubHeader>
     </Container>
   );
 };

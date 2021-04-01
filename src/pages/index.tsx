@@ -20,7 +20,7 @@ const Home: React.FC = () => (
       <title>Home</title>
     </Head>
     <Header>
-      <span>Planeje sua viagem</span>
+      {[{ text: 'Planeje sua viagem', linkAdress: '/tour/create' }]}
     </Header>
     <Body>
       <div className="mobileThings">

@@ -88,7 +88,7 @@ export default createGlobalStyle`
       }
 
       @media (min-width: 2560px) {
-          font-size: 110%;
+          font-size: 95%;
       }
     }
   }

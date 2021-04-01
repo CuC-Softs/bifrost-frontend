@@ -146,6 +146,10 @@ export const SubHeader = styled.div`
   background: #ebeaea;
   box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 
+  button + button {
+    margin-left: 2rem;
+  }
+
   span {
     font-family: Roboto Condensed;
     font-style: normal;
@@ -155,9 +159,5 @@ export const SubHeader = styled.div`
     text-align: center;
 
     color: #00625b;
-
-    & + span {
-      margin-left: 2rem;
-    }
   }
 `;

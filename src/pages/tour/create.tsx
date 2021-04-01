@@ -130,8 +130,10 @@ const pages: React.FC = () => {
         <title>Create Logbook</title>
       </Head>
       <DesktopHeader>
-        <span>Planeje sua viagem</span>
-        <span>Adicione seu próprio local</span>
+        {[
+          { text: 'Planeje sua viagem', linkAdress: '/tour/create' },
+          { text: 'Adicione seu próprio local', linkAdress: '' },
+        ]}
       </DesktopHeader>
       <Header>
         <button

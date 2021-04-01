@@ -32,8 +32,10 @@ const pages: React.FC = () => {
         <title>Profile</title>
       </Head>
       <Header>
-        <span>Planeje sua viagem</span>
-        <span>Adicione seu próprio local</span>
+        {[
+          { text: 'Planeje sua viagem', linkAdress: '/tour/create' },
+          { text: 'Adicione seu próprio local', linkAdress: '' },
+        ]}
       </Header>
       <Header2 isSelf={isSelf} />
       <HeaderExtension isSelf={isSelf} />
@@ -52,16 +54,16 @@ const pages: React.FC = () => {
                     </li>
                   );
                 }
-                if (i % 2 === 1) {
-                  return (
-                    <li key={id} className="listType2">
-                      <div className="normal">
-                        <label>{text}</label>
-                      </div>
-                      <img src={img} alt="post-img" />
-                    </li>
-                  );
-                }
+                // if (i % 2 === 1) {
+                return (
+                  <li key={id} className="listType2">
+                    <div className="normal">
+                      <label>{text}</label>
+                    </div>
+                    <img src={img} alt="post-img" />
+                  </li>
+                );
+                // }
               })}
             </ul>
           </>
@@ -105,16 +107,16 @@ const pages: React.FC = () => {
                     </li>
                   );
                 }
-                if (i % 2 === 0) {
-                  return (
-                    <li key={id} className="listType2">
-                      <div className="normal">
-                        <label>{text}</label>
-                      </div>
-                      <img src={img} alt="post-img" />
-                    </li>
-                  );
-                }
+                // if (i % 2 === 0) {
+                return (
+                  <li key={id} className="listType2">
+                    <div className="normal">
+                      <label>{text}</label>
+                    </div>
+                    <img src={img} alt="post-img" />
+                  </li>
+                );
+                // }
               })}
             </ul>
           </>

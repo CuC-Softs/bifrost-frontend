@@ -28,7 +28,7 @@ const pages: React.FC = () => (
       </Link>
     </Header>
     <DesktopHeader>
-      <span>Planeje sua viagem</span>
+      {[{ text: 'Planeje sua viagem', linkAdress: '/tour/create' }]}
     </DesktopHeader>
     <div id="TripsImagesAndMakeTripButton">
       <TripImages>
